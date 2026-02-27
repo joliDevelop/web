@@ -1,0 +1,114 @@
+:root {
+  --color-primary: #18D5E3;
+  --color-secondary: #003060;
+  --color-dark: #1A1A1A;
+  --color-white: #FFFFFF;
+  --gradient-brand: linear-gradient(90deg,
+      #5de0e6 0%,
+      #013a86 100%);
+  --color-text: var(--color-secondary);
+  --color-text-light: #5c6b80;
+  --color-border: #e6eef5;
+  --color-background: #ffffff;
+  --color-background-soft: #f7fbfd;
+  --font-main: 'Poppins', sans-serif;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --shadow-soft: 0 8px 25px rgba(0, 48, 96, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-main);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--color-background);
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--color-secondary);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+p {
+  font-weight: 400;
+  color: var(--color-text);
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-secondary);
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 22px;
+  border-radius: var(--radius-md);
+  font-family: var(--font-main);
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+  border: none;
+}
+
+.btn-primary {
+  background: var(--gradient-brand);
+  color: #ffffff;
+  box-shadow: var(--shadow-soft);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 48, 96, 0.15);
+}
+
+.btn-secondary {
+  background: var(--color-secondary);
+  color: white;
+}
+
+.btn-secondary:hover {
+  opacity: 0.9;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section {
+  padding: 80px 0;
+}
+
+.card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: 30px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--color-border);
+}
