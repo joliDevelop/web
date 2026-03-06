@@ -3,6 +3,8 @@ import seguroIcon from '../../assets/icons/seguro.png'
 import retiroIcon from '../../assets/icons/retiro.png'
 import pensionIcon from '../../assets/icons/pension.png'
 import creditoIcon from '../../assets/icons/credito.png'
+import imageP from '../../assets/images/SWPAREJA1-SINFONDO.png'
+import Fondo from '../../assets/images/FONDO1.png'
 
 export function Home() {
     return (
@@ -73,8 +75,32 @@ export function Home() {
                             </div>
                             <p>Accede a créditos diseñados especialmente para pensionados.</p>
                         </div>
-
                     </div>
+
+                    <div className={styles.boxGrid}>
+                        <div className={styles.boxColumn}>
+                            <div
+                                className={styles.box}
+                                style={{ backgroundImage: `url(${Fondo})` }}
+                            >
+                                <img
+                                    src={imageP}
+                                    alt="Asesoría financiera"
+                                    className={styles.imageInfo}
+                                />
+                            </div>
+                        </div>
+
+                        <div className={styles.infoColumn}>
+                            <h1 className={styles.titleInfo}>
+                                MEJORAR <span className={styles.highlight2}>TU</span> FUTURO <span className={styles.highlight2}>FINANCIERO ES NUESTRA</span> MISIÓN
+                            </h1>
+                            <p className={styles.textInfo}>
+                                Nuestro objetivo es ayudarte a mejorar tu futuro financiero con asesoría y orientación en pensiones, retiro, protección e inversión.
+                            </p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
