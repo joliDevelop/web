@@ -1,11 +1,11 @@
 .navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  padding: 16px;
-  background: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 16px;
+    background: transparent;
 }
 
 .container {
@@ -59,4 +59,54 @@
 .actions {
     display: flex;
     align-items: center;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .links {
+        gap: 22px;
+    }
+
+    .logo img {
+        height: 34px;
+    }
+
+    .links a {
+        font-size: 12px;
+    }
+}
+
+/* Celular */
+@media (max-width: 640px) {
+    .links {
+        gap: 14px;
+    }
+
+    .links a {
+        font-size: 11px;
+        letter-spacing: 0.6px;
+    }
+
+    .logo img {
+        height: 30px;
+    }
+
+    .container {
+        padding: 20px 10px;
+    }
+}
+
+/* Celular pequeño */
+@media (max-width: 480px) {
+    .links {
+        gap: 10px;
+    }
+
+    .links a {
+        font-size: 10px;
+    }
+
+    .logo img {
+        height: 26px;
+    }
 }
