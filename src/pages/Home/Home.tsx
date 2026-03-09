@@ -1,3 +1,4 @@
+import { GoogleMapEmbed } from '../../components/MapsApi/GoogleMapEmbed'
 import styles from './Home.module.css'
 import seguroIcon from '../../assets/icons/seguro.png'
 import retiroIcon from '../../assets/icons/retiro.png'
@@ -100,6 +101,27 @@ export function Home() {
                             </p>
                         </div>
                     </div>
+
+                    <section className={styles.mapsSection}>
+                        <div className={styles.mapsContainer}>
+
+                            <h1 className={styles.mapsTitle}>¡<span className={styles.highlight2}>ENCUÉNTRANOS</span> AQUÍ<span className={styles.highlight2}>!</span></h1>
+
+                            <div className={styles.mapsGrid}>
+                                <div className={styles.mapColumn}>
+                                    <GoogleMapEmbed />
+                                </div>
+
+                                <div className={styles.commentsColumn}>
+                                    <h3 className={styles.commentsTitle}>Comentarios</h3>
+                                    <p className={styles.commentsText}>
+                                        Aquí después van las reseñas de Google Maps.
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
 
                 </div>
             </div>

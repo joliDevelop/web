@@ -216,3 +216,60 @@
     object-fit: contain;
     display: block;
 }
+
+.mapsSection {
+    width: 100%;
+    padding: 50px 0;
+}
+
+.mapsContainer {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.mapsTitle {
+    padding: 10px;
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1.1;
+    text-align: center;
+}
+
+.mapsGrid {
+    display: grid;
+    grid-template-columns: 660px 1fr;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+}
+
+.mapColumn {
+    display: flex;
+}
+
+.mapColumn iframe {
+    width: 100%;
+    height: 420px;
+    border: 0;
+    border-radius: 20px;
+    display: block;
+}
+
+.commentsColumn {
+    max-width: 520px;
+}
+
+.commentsTitle {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--color-secondary);
+    margin-bottom: 12px;
+}
+
+.commentsText {
+    font-size: 18px;
+    color: var(--color-secondary);
+    line-height: 1.6;
+}
