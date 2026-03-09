@@ -273,3 +273,214 @@
     color: var(--color-secondary);
     line-height: 1.6;
 }
+
+@media (max-width: 1024px) {
+    .heroBanner {
+        margin: 0 32px;
+        padding: 120px 0 82px 0;
+    }
+
+    .titleBanner {
+        font-size: 52px;
+    }
+
+    .title {
+        font-size: 52px;
+    }
+
+    .titleInfo,
+    .mapsTitle {
+        font-size: 34px;
+    }
+
+    .boxGrid {
+        gap: 32px;
+    }
+
+    .mapsGrid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    .commentsColumn {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .banner {
+        height: auto;
+        min-height: 420px;
+    }
+
+    .heroBanner {
+        margin: 0 24px;
+        padding: 130px 0 72px 0;
+    }
+
+    .titleBanner {
+        font-size: 42px;
+        line-height: 1.15;
+    }
+
+    .subtitleBanner {
+        font-size: 16px;
+        margin-bottom: 28px;
+    }
+
+    .title {
+        font-size: 42px;
+    }
+
+    .titleInfo,
+    .mapsTitle {
+        font-size: 30px;
+        padding: 0;
+    }
+
+    .textInfo,
+    .commentsText,
+    .subtitle {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .cardGrid {
+        gap: 18px;
+    }
+
+    .boxGrid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        margin-top: 40px;
+    }
+
+    .infoColumn {
+        align-items: center;
+        text-align: center;
+    }
+
+    .textInfo {
+        max-width: 100%;
+    }
+
+    .box {
+        max-width: 100%;
+        height: 340px;
+    }
+
+    .imageInfo {
+        max-width: 100%;
+        height: 100%;
+    }
+
+    .mapsSection {
+        padding: 40px 0;
+    }
+
+    .mapsGrid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .mapColumn {
+        width: 100%;
+    }
+
+    .mapColumn iframe {
+        height: 360px;
+        border-radius: 16px;
+    }
+
+    .commentsColumn {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .commentsTitle {
+        font-size: 30px;
+    }
+
+    .cta {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+@media (max-width: 480px) {
+    .heroBanner {
+        margin: 0 16px;
+        padding: 140px 0 56px 0;
+    }
+
+    .titleBanner {
+        font-size: 34px;
+    }
+
+    .subtitleBanner {
+        font-size: 15px;
+    }
+
+    .containerHome {
+        padding: 0;
+    }
+
+    .hero {
+        width: 100%;
+    }
+
+    .title {
+        font-size: 34px;
+    }
+
+    .titleInfo,
+    .mapsTitle {
+        font-size: 26px;
+        line-height: 1.2;
+    }
+
+    .textInfo,
+    .commentsText,
+    .subtitle,
+    .bodyText {
+        font-size: 15px;
+    }
+
+    .cardGrid {
+        grid-template-columns: 1fr;
+        margin-top: 32px;
+    }
+
+    .cardHome {
+        padding: 16px;
+    }
+
+    .iconWrapper {
+        width: 52px;
+        height: 52px;
+        flex: 0 0 52px;
+    }
+
+    .iconWrapper img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .box {
+        height: 300px;
+        border-radius: 14px;
+    }
+
+    .mapsContainer {
+        width: 92%;
+    }
+
+    .mapColumn iframe {
+        height: 300px;
+        border-radius: 14px;
+    }
+
+    .commentsTitle {
+        font-size: 26px;
+    }
+}

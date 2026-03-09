@@ -17,9 +17,6 @@ export function Navbar() {
           <a href="#contacto">Contacto</a>
         </nav>
 
-        <div className={styles.actions}>
-          <button className="btn btn-primary">Cotizar ahora</button>
-        </div>
       </div>
     </header>
   )

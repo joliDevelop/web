@@ -32,7 +32,7 @@ export function Home() {
             <div className={styles.containerHome}>
                 <div className={styles.hero}>
                     <h1 className={styles.title}>
-                        <span className={styles.highlight2}>Nuestros</span> servicios
+                        <span className={styles.highlight2}>NUESTROS</span> SERVICIOS
                     </h1>
 
                     <div className={styles.cardGrid}>
