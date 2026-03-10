@@ -15,7 +15,7 @@ export function Home() {
             <div className={styles.banner}>
                 <div className={styles.heroBanner}>
                     <h1 className={styles.titleBanner}>
-                        ¡OBTÉN LA <span className={styles.highlight}>MEJOR</span> PENSIÓN <span className={styles.highlight}>POSIBLE!</span>
+                        ¡OBTÉN LA <span className={styles.highlight}>MEJOR</span> PENSIÓN <span className={styles.highlight}>POSIBLE!.</span>
                     </h1>
 
                     <p className={styles.subtitleBanner}>
