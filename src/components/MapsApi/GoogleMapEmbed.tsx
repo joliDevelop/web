@@ -1,11 +1,13 @@
 type GoogleMapEmbedProps = {
-    placeId?: string
+    placeId?: string;
+    VITE_MAPS_API_KEY?: string;
 }
 
 export function GoogleMapEmbed({
+    VITE_MAPS_API_KEY = 'AIzaSyARlQRYytiRJvKOKqrb1uUgWrRAmLTyak4',
     placeId = 'ChIJ21SghTNF04URZUcUqHMuz0U',
 }: GoogleMapEmbedProps) {
-    const apiKey = import.meta.env.VITE_MAPS_API_KEY
+    const apiKey = VITE_MAPS_API_KEY
 
     if (!apiKey) {
         return <p>Error: no se encontró la API key de Google Maps.</p>

@@ -223,8 +223,8 @@
 }
 
 .mapsContainer {
-    width: 90%;
-    max-width: 1200px;
+    width: 100%;
+    max-width: 1800px;
     margin: 0 auto;
 }
 
@@ -239,10 +239,9 @@
 
 .mapsGrid {
     display: grid;
-    grid-template-columns: 660px 1fr;
-    justify-content: center;
-    align-items: center;
+    grid-template-columns: 1fr 1fr;
     gap: 80px;
+    margin-top: 28px;
 }
 
 .mapColumn {
@@ -258,20 +257,37 @@
 }
 
 .commentsColumn {
-    max-width: 520px;
+    width: 100%;
+    height: 420px;
+    display: flex;
+    flex-direction: column;
 }
 
 .commentsTitle {
     font-size: 36px;
     font-weight: 700;
     color: var(--color-secondary);
-    margin-bottom: 12px;
+    margin-bottom: 20px;
 }
 
 .commentsText {
-    font-size: 18px;
-    color: var(--color-secondary);
-    line-height: 1.6;
+    width: 100%;
+    overflow-y: auto;
+    flex: 1;
+    padding-right: 6px;
+}
+
+.commentsText::-webkit-scrollbar {
+    width: 6px;
+}
+
+.commentsText::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.commentsText::-webkit-scrollbar-track {
+    background: transparent;
 }
 
 @media (max-width: 1024px) {
