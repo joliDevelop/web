@@ -7,28 +7,24 @@ import pensionIcon from '../../assets/icons/pension.png'
 import creditoIcon from '../../assets/icons/credito.png'
 import imageP from '../../assets/images/SWPAREJA1-SINFONDO.png'
 import Fondo from '../../assets/images/FONDO1.png'
+import { Banner } from '../../components/shared/Banner/Banner'
+import bannerHome from '../../assets/images/banner1.png'
 
 export function Home() {
     return (
         <section className={styles.home}>
 
-            <div className={styles.banner}>
-                <div className={styles.heroBanner}>
-                    <h1 className={styles.titleBanner}>
-                        ¡OBTÉN LA <span className={styles.highlight}>MEJOR</span> PENSIÓN <span className={styles.highlight}>POSIBLE!.</span>
-                    </h1>
-
-                    <p className={styles.subtitleBanner}>
-                        Simula tu pensión en Modalidad 40 y conoce tu posible retiro.
-                    </p>
-
-                    <div className={styles.cta}>
-                        <button className="btn btn-secondary">
-                            Calcular mi pensión
-                        </button>
-                    </div>
-                </div>
-            </div>
+            <Banner
+                backgroundImage={bannerHome}
+                title={
+                    <>
+                        ¡OBTÉN LA <span className={styles.highlight}>MEJOR</span> PENSIÓN{" "}
+                        <span className={styles.highlight}>POSIBLE!</span>
+                    </>
+                }
+                subtitle="Simula tu pensión en Modalidad 40 y conoce tu posible retiro."
+                buttonText="Simular mi pensión"
+            />
 
             <div className={styles.containerHome}>
                 <div className={styles.hero}>
