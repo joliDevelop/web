@@ -16,6 +16,8 @@
   --radius-md: 12px;
   --radius-lg: 18px;
   --shadow-soft: 0 8px 25px rgba(0, 48, 96, 0.08);
+  --icon-filter-primary: brightness(0) saturate(100%) invert(66%) sepia(69%) saturate(447%) hue-rotate(144deg) brightness(96%) contrast(96%);
+  --icon-filter-secondary: brightness(0) saturate(100%) invert(13%) sepia(93%) saturate(1524%) hue-rotate(189deg) brightness(93%) contrast(101%);
 }
 
 * {

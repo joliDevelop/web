@@ -2,11 +2,9 @@
     position: relative;
     width: 100%;
     height: 480px;
-
     background-size: cover;
-    background-position: center;
+    background-position: right center;
     background-repeat: no-repeat;
-
     display: flex;
     align-items: center;
 }
