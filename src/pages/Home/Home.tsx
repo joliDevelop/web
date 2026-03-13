@@ -8,7 +8,7 @@ import creditoIcon from '../../assets/icons/credito.png'
 import imageP from '../../assets/images/SWPAREJA1-SINFONDO.png'
 import Fondo from '../../assets/images/FONDO1.png'
 import { Banner } from '../../components/shared/Banner/Banner'
-import bannerHome from '../../assets/images/banner1.png'
+import bannerHome from '../../assets/images/banner1.webp'
 
 export function Home() {
     return (
