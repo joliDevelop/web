@@ -9,6 +9,37 @@ import imageP from '../../assets/images/SWPAREJA1-SINFONDO.png'
 import Fondo from '../../assets/images/FONDO1.png'
 import { Banner } from '../../components/shared/Banner/Banner'
 import bannerHome from '../../assets/images/banner1.webp'
+import { SectionTitle } from '../../components/shared/SectionTitle/SectionTitle'
+import { ServiceCard } from '../../components/shared/ServiceCard/ServiceCard'
+import { SectionSubtitle } from '../../components/shared/SectionSubtitle/SectionSubtitle'
+import { AboutSection } from '../../components/shared/AboutSection/AboutSection'
+
+const services = [
+    {
+        icon: seguroIcon,
+        alt: 'Seguros',
+        title: 'SEGUROS',
+        description: 'Protege lo que más importa con seguros diseñados a tu medida.'
+    },
+    {
+        icon: retiroIcon,
+        alt: 'Plan de retiro',
+        title: 'PLAN DE RETIRO',
+        description: 'Construye un retiro sólido con un plan pensado para ti.'
+    },
+    {
+        icon: pensionIcon,
+        alt: 'Afore y pensiones',
+        title: 'AFORE Y PENSIONES',
+        description: 'Optimiza tu Afore y mejora tu pensión.'
+    },
+    {
+        icon: creditoIcon,
+        alt: 'Crédito a pensionados',
+        title: 'CREDITO A PENSIONADOS',
+        description: 'Accede a créditos diseñados especialmente para pensionados.'
+    }
+]
 
 export function Home() {
     return (
@@ -28,82 +59,41 @@ export function Home() {
 
             <div className={styles.containerHome}>
                 <div className={styles.hero}>
-                    <h1 className={styles.title}>
-                        <span className={styles.highlight2}>NUESTROS</span> SERVICIOS
-                    </h1>
+                    <SectionTitle
+                        title="NUESTROS SERVICIOS"
+                        highlight="SERVICIOS"
+                    />
 
                     <div className={styles.cardGrid}>
-                        <div className={styles.cardHome}>
-                            <div className={styles.cardHeader}>
-                                <div className={styles.iconWrapper}>
-                                    <img src={seguroIcon} alt="Seguros" />
-                                </div>
-                                <h3>SEGUROS</h3>
-                            </div>
-                            <p>Protege lo que más importa con seguros diseñados a tu medida.</p>
-
-                        </div>
-
-                        <div className={styles.cardHome}>
-                            <div className={styles.cardHeader}>
-                                <div className={styles.iconWrapper}>
-                                    <img src={retiroIcon} alt="Retiro" />
-                                </div>
-                                <h3>PLAN DE RETIRO</h3>
-                            </div>
-                            <p>Construye un retiro sólido con un plan pensado para ti.</p>
-                        </div>
-
-                        <div className={styles.cardHome}>
-                            <div className={styles.cardHeader}>
-                                <div className={styles.iconWrapper}>
-                                    <img src={pensionIcon} alt="Pension" />
-                                </div>
-                                <h3>AFORE Y PENSIONES</h3>
-                            </div>
-                            <p>Optimiza tu Afore y mejora tu pensión.</p>
-                        </div>
-
-                        <div className={styles.cardHome}>
-                            <div className={styles.cardHeader}>
-                                <div className={styles.iconWrapper}>
-                                    <img src={creditoIcon} alt="Credito" />
-                                </div>
-                                <h3>CREDITO A PENSIONADOS</h3>
-                            </div>
-                            <p>Accede a créditos diseñados especialmente para pensionados.</p>
-                        </div>
+                        {services.map((service) => (
+                            <ServiceCard
+                                key={service.title}
+                                icon={service.icon}
+                                alt={service.alt}
+                                title={service.title}
+                                description={service.description}
+                            />
+                        ))}
                     </div>
-
-                    <div className={styles.boxGrid}>
-                        <div className={styles.boxColumn}>
-                            <div
-                                className={styles.box}
-                                style={{ backgroundImage: `url(${Fondo})` }}
-                            >
-                                <img
-                                    src={imageP}
-                                    alt="Asesoría financiera"
-                                    className={styles.imageInfo}
-                                />
-                            </div>
-                        </div>
-
-                        <div className={styles.infoColumn}>
-                            <h1 className={styles.titleInfo}>
-                                MEJORAR <span className={styles.highlight2}>TU</span> FUTURO <span className={styles.highlight2}>FINANCIERO ES NUESTRA</span> MISIÓN
-                            </h1>
-                            <p className={styles.textInfo}>
-                                Nuestro objetivo es ayudarte a mejorar tu futuro financiero con asesoría y orientación en pensiones, retiro, protección e inversión.
-                            </p>
-                        </div>
-                    </div>
+                    <AboutSection
+                        backgroundImage={Fondo}
+                        mainImage={imageP}
+                        imageAlt="Asesoría financiera"
+                        subtitle={
+                            <>
+                                MEJORAR <span className={styles.highlight2}>TU</span> FUTURO{" "}
+                                <span className={styles.highlight2}>FINANCIERO ES NUESTRA</span> MISIÓN
+                            </>
+                        }
+                        description="Nuestro objetivo es ayudarte a mejorar tu futuro financiero con asesoría y orientación en pensiones, retiro, protección e inversión."
+                    />
 
                     <section className={styles.mapsSection}>
                         <div className={styles.mapsContainer}>
 
-                            <h1 className={styles.mapsTitle}>¡<span className={styles.highlight2}>ENCUÉNTRANOS</span> AQUÍ<span className={styles.highlight2}>!</span></h1>
-
+                            <SectionSubtitle>
+                                ¡<span className={styles.highlight2}>ENCUÉNTRANOS</span> AQUÍ<span className={styles.highlight2}>!</span>
+                            </SectionSubtitle>
                             <div className={styles.mapsGrid}>
                                 <div className={styles.commentsColumn}>
                                     <h3 className={styles.commentsTitle}>Comentarios</h3>

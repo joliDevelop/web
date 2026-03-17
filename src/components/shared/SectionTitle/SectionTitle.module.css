@@ -1,0 +1,30 @@
+.title {
+    font-size: 62px;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-align: center;
+    line-height: 1.1;
+}
+
+.highlight {
+    color: var(--color-secondary);
+}
+
+@media (max-width: 1024px) {
+    .title {
+        font-size: 52px;
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 42px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 34px;
+        line-height: 1.2;
+    }
+}

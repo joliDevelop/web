@@ -13,52 +13,12 @@
     max-width: 1400px;
 }
 
-.title {
-    font-size: 62px;
-    font-weight: 700;
-    color: var(--color-primary);
-    line-height: 1.1;
-    text-align: center;
-}
-
-.titleInfo {
-    padding: 10px;
-    font-size: 38px;
-    font-weight: 700;
-    color: var(--color-primary);
-    line-height: 1.1;
-    text-align: center;
-}
-
-.textInfo {
-    margin-top: 24px;
-    font-size: 18px;
-    font-weight: 400;
-    color: var(--color-secondary);
-    line-height: 1.7;
-    max-width: 560px;
-}
-
-.subtitle {
-    font-size: 18px;
-    font-weight: 400;
-    color: var(--color-secondary);
-    margin-bottom: 40px;
-}
-
-.bodyText {
-    margin-top: 24px;
-    max-width: 65ch;
-    color: var(--color-text-light);
-    line-height: 1.6;
-}
-
 .highlight {
     color: white;
 }
 
 .highlight2 {
-    color: black;
+    color: var(--color-secondary);
 }
 
 .cardGrid {
@@ -66,110 +26,6 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 24px;
-}
-
-.cardHome {
-    background: var(--color-white);
-    border-radius: var(--radius-lg);
-    padding: 15px;
-    border: 1px solid var(--color-border);
-    box-shadow: var(--shadow-soft);
-    transition: 0.2s ease;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-}
-
-.cardHome:hover {
-    transform: translateY(-4px);
-}
-
-.cardHeader {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-}
-
-.cardHeader h3 {
-    margin: 0;
-    min-width: 0;
-    line-height: 1.1;
-}
-
-.iconWrapper {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #eef2f7;
-    flex: 0 0 56px;
-}
-
-.iconWrapper img {
-    width: 26px;
-    height: 26px;
-    transition: 0.25s ease;
-}
-
-.cardHome:hover .iconWrapper {
-    background: var(--color-primary);
-}
-
-.boxGrid {
-    margin-top: 60px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 48px;
-    align-items: center;
-}
-
-.boxColumn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.box {
-    position: relative;
-    width: 100%;
-    max-width: 420px;
-    height: 380px;
-    border-radius: 16px;
-    overflow: hidden;
-    background-size: cover;
-    background-position: center bottom;
-    background-repeat: no-repeat;
-}
-
-.box::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: var(--gradient-brand);
-    opacity: 0.65;
-    z-index: 1;
-}
-
-.infoColumn {
-    align-self: start;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.imageInfo {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
-    width: auto;
-    max-width: 460px;
-    height: 100%;
-    object-fit: contain;
-    display: block;
 }
 
 .mapsSection {
@@ -246,18 +102,8 @@
 }
 
 @media (max-width: 1024px) {
-
-    .title {
-        font-size: 52px;
-    }
-
-    .titleInfo,
     .mapsTitle {
         font-size: 34px;
-    }
-
-    .boxGrid {
-        gap: 32px;
     }
 
     .mapsGrid {
@@ -271,51 +117,13 @@
 }
 
 @media (max-width: 768px) {
-
-    .title {
-        font-size: 42px;
-    }
-
-    .titleInfo,
     .mapsTitle {
         font-size: 30px;
         padding: 0;
     }
 
-    .textInfo,
-    .commentsText,
-    .subtitle {
-        font-size: 16px;
-        line-height: 1.6;
-    }
-
     .cardGrid {
         gap: 18px;
-    }
-
-    .boxGrid {
-        grid-template-columns: 1fr;
-        gap: 32px;
-        margin-top: 40px;
-    }
-
-    .infoColumn {
-        align-items: center;
-        text-align: center;
-    }
-
-    .textInfo {
-        max-width: 100%;
-    }
-
-    .box {
-        max-width: 100%;
-        height: 340px;
-    }
-
-    .imageInfo {
-        max-width: 100%;
-        height: 100%;
     }
 
     .mapsSection {
@@ -347,7 +155,6 @@
 }
 
 @media (max-width: 480px) {
-
     .containerHome {
         padding: 0;
     }
@@ -356,46 +163,9 @@
         width: 100%;
     }
 
-    .title {
-        font-size: 34px;
-    }
-
-    .titleInfo,
-    .mapsTitle {
-        font-size: 26px;
-        line-height: 1.2;
-    }
-
-    .textInfo,
-    .commentsText,
-    .subtitle,
-    .bodyText {
-        font-size: 15px;
-    }
-
     .cardGrid {
         grid-template-columns: 1fr;
         margin-top: 32px;
-    }
-
-    .cardHome {
-        padding: 16px;
-    }
-
-    .iconWrapper {
-        width: 52px;
-        height: 52px;
-        flex: 0 0 52px;
-    }
-
-    .iconWrapper img {
-        width: 24px;
-        height: 24px;
-    }
-
-    .box {
-        height: 300px;
-        border-radius: 14px;
     }
 
     .mapsContainer {
@@ -409,5 +179,10 @@
 
     .commentsTitle {
         font-size: 26px;
+    }
+
+    .mapsTitle {
+        font-size: 26px;
+        line-height: 1.2;
     }
 }
