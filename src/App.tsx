@@ -1,18 +1,41 @@
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, Outlet } from 'react-router-dom'
 import { Navbar } from './components/Navbar/Navbar'
+import { Footer } from './components/Footer/Footer'
 import { Home } from './pages/Home/Home'
 import { Nosotros } from './pages/Nosotros/Nosotros'
-import { Footer } from './components/Footer/Footer'
+import { ResetPass } from './pages/Reset/Reset'
 
-export default function App() {
+function MainLayout() {
   return (
     <>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/nosotros" element={<Nosotros />} />
-      </Routes>
+      <Outlet />
       <Footer />
     </>
+  )
+}
+
+function AuthLayout() {
+  return (
+    <>
+      <Outlet />
+    </>
+  )
+}
+
+export default function App() {
+  return (
+    <Routes>
+
+      <Route element={<MainLayout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/nosotros" element={<Nosotros />} />
+      </Route>
+
+      <Route element={<AuthLayout />}>
+        <Route path="/reset/password" element={<ResetPass />} />
+      </Route>
+
+    </Routes>
   )
 }
