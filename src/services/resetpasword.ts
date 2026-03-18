@@ -1,11 +1,10 @@
 import axios from 'axios'
-
-const API_URL = import.meta.env.VITE_API_URL
+import { CONFIG } from '../config/app.config'
 
 export const validarTokenRecuperacion = async (token: string) => {
   try {
     const response = await axios.get(
-      `${API_URL}/users/validar-token-recuperacion/${token}`
+      `${CONFIG.API_URL}/users/validar-token-recuperacion/${token}`
     )
 
     return response.data
@@ -22,7 +21,7 @@ export const restablecerContrasena = async (
 ) => {
   try {
     const response = await axios.post(
-      `${API_URL}/users/restablecer-contrasena`,
+      `${CONFIG.API_URL}/users/restablecer-contrasena`,
       {
         token,
         password,
