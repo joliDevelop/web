@@ -1,0 +1,152 @@
+.reset_container {
+  min-height: 00vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reset_card {
+  width: 100%;
+  max-width: 400px;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.reset_logo {
+  width: 120px;
+  margin-bottom: 10px;
+}
+
+.reset_title {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.reset_inputGroup {
+  margin-bottom: 15px;
+}
+
+.reset_input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  outline: none;
+  font-size: 14px;
+}
+
+.reset_showPass {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  font-size: 13px;
+}
+
+.reset_button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 30px;
+  border: none;
+  background: #1fa7c6;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.reset_button:hover {
+  opacity: 0.9;
+}
+
+
+
+
+
+.reset_error {
+  background: rgba(255, 77, 77, 0.08);
+  border: 1px solid rgba(255, 77, 77, 0.3);
+  color: #ff4d4f;
+  padding: 14px 16px;
+  margin-top: 12px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  text-align: center;
+  backdrop-filter: blur(6px);
+}
+
+.reset_success {
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.4);
+  color: #16a34a;
+  padding: 14px 16px;
+  margin-top: 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  text-align: center;
+  backdrop-filter: blur(6px);
+
+  animation: fadeSuccess 0.4s ease;
+}
+
+.reset_error_msj {
+  color: #b54747;
+  font-size: 13px;
+  text-align: center;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+.reset_error,
+.reset_error_msj {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
+.reset_passwordHint {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.04);
+  font-size: 13px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.reset_passwordHint strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #333;
+  font-weight: 600;
+}
+
+.reset_passwordHint ul {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.reset_passwordHint li {
+  margin-bottom: 4px;
+}

@@ -2,8 +2,13 @@ FROM node:20-alpine
 
 WORKDIR /app
 
-COPY package*.json ./
+ARG VITE_API_URL
+ARG VITE_MAPS_API_KEY
 
+ENV VITE_API_URL=$VITE_API_URL
+ENV VITE_MAPS_API_KEY=$VITE_MAPS_API_KEY
+
+COPY package*.json ./
 RUN npm install
 
 COPY . .
