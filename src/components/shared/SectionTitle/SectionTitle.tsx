@@ -1,11 +1,20 @@
 import styles from './SectionTitle.module.css'
 
 interface SectionTitleProps {
-    title: string
+    title?: string
     highlight?: string
+    children?: React.ReactNode
 }
 
-export function SectionTitle({ title, highlight }: SectionTitleProps) {
+export function SectionTitle({ title, highlight, children }: SectionTitleProps) {
+    if (children) {
+        return <h2 className={styles.title}>{children}</h2>
+    }
+
+    if (!title) {
+        return null
+    }
+
     if (!highlight) {
         return <h2 className={styles.title}>{title}</h2>
     }
@@ -16,7 +25,7 @@ export function SectionTitle({ title, highlight }: SectionTitleProps) {
         <h2 className={styles.title}>
             {parts[0]}
             <span className={styles.highlight}>{highlight}</span>
-            {parts[1]}
+            {parts.slice(1).join(highlight)}
         </h2>
     )
 }

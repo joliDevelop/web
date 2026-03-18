@@ -1,0 +1,29 @@
+.nosotros {
+    padding: 0;
+}
+
+.highlight {
+    color: white;
+}
+
+.highlight2 {
+    color: var(--color-secondary);
+}
+
+.container {
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.hero {
+    width: 100%;
+    max-width: 1400px;
+}
+
+.cardGrid {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+}
