@@ -35,6 +35,27 @@
     font-size: 18px;
     line-height: 1.6;
     color: var(--color-secondary);
+    white-space: normal;
+    word-break: break-word;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.cardList {
+    margin: 0;
+    padding-left: 20px;
+    color: var(--color-secondary);
+    white-space: normal;
+}
+
+.cardListItem {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 6px;
+}
+
+.cardListItem:last-child {
+    margin-bottom: 0;
 }
 
 .iconWrapper {
@@ -58,6 +79,34 @@
     background: var(--color-primary);
 }
 
+.row .cardHeader {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.column .cardHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}
+
+.column .cardTitle {
+    text-align: center;
+}
+
+.column .cardText {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.column .cardList {
+    align-self: center;
+    text-align: left;
+}
+
 @media (max-width: 768px) {
     .card {
         gap: 12px;
@@ -67,9 +116,14 @@
         font-size: 18px;
     }
 
-    .cardText {
+    .cardText,
+    .cardListItem {
         font-size: 16px;
         line-height: 1.6;
+    }
+
+    .column .cardText {
+        text-align: left;
     }
 }
 
@@ -93,7 +147,8 @@
         font-size: 17px;
     }
 
-    .cardText {
+    .cardText,
+    .cardListItem {
         font-size: 15px;
     }
 }

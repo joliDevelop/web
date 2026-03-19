@@ -33,6 +33,14 @@
     z-index: 1;
 }
 
+.reverse {
+    direction: rtl;
+}
+
+.reverse>* {
+    direction: ltr;
+}
+
 .infoColumn {
     align-self: start;
     display: flex;
