@@ -7,6 +7,7 @@ interface AboutSectionProps {
     imageAlt: string
     subtitle: React.ReactNode
     description: string
+    reverse?: boolean
 }
 
 export function AboutSection({
@@ -14,10 +15,12 @@ export function AboutSection({
     mainImage,
     imageAlt,
     subtitle,
-    description
+    description,
+    reverse = false
 }: AboutSectionProps) {
     return (
-        <section className={styles.boxGrid}>
+        <section className={`${styles.boxGrid} ${reverse ? styles.reverse : ''}`}>
+
             <div className={styles.boxColumn}>
                 <div
                     className={styles.box}
@@ -40,6 +43,7 @@ export function AboutSection({
                     {description}
                 </p>
             </div>
+
         </section>
     )
 }
