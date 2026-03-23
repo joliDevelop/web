@@ -55,6 +55,8 @@
     color: var(--color-secondary);
     line-height: 1.7;
     max-width: 560px;
+    text-align: justify;
+
 }
 
 .imageInfo {
