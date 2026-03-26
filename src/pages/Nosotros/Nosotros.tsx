@@ -132,6 +132,24 @@ export function Nosotros() {
 
             <div className={styles.container}>
                 <div className={styles.hero}>
+                    <section className={styles.containerTittle}>
+                        <SectionSubtitle>
+                            AYUDAMOS<span className={styles.highlight2}> A NUESTROS CLIENTES A CONSTRUIR UN</span> FUTURO <span className={styles.highlight2}>FINANCIERO</span> SEGURO Y ESTABLE.
+                        </SectionSubtitle>
+                    </section>
+
+                    <AboutSection
+                        backgroundImage={Fondo}
+                        mainImage={imageP}
+                        imageAlt="Asesoría financiera"
+                        subtitle={
+                            <>
+                                <span className={styles.highlight2}>¡MÁS DE 15 AÑOS DE</span> EXPERIENCIA!
+                            </>
+                        }
+                        description="Con un gran equipo de asesores certificados listos para brindar la mejor asesoría financiera y más de 15 años de experiencia hemos logrado ser reconocidos por nuestros socios comerciales a nivel nacional, logrando un impacto positivo en la vida de cada cliente."
+                        reverse
+                    />
                     <SectionTitle>
                         <span className={styles.highlight2}>MISIÓN</span>, VISIÓN, <span className={styles.highlight2}>VALORES</span>
                     </SectionTitle>
@@ -151,22 +169,11 @@ export function Nosotros() {
 
                     <section className={styles.containerTittle}>
                         <SectionSubtitle>
-                            AYUDAMOS<span className={styles.highlight2}> A NUESTROS CLIENTES A CONSTRUIR UN</span> FUTURO <span className={styles.highlight2}>FINANCIERO</span> SEGURO Y ESTABLE.
+                            <span className={styles.highlight2}>NUESTROS </span>LOGROS
                         </SectionSubtitle>
                     </section>
+                    <CardHover items={wins} />
 
-                    <AboutSection
-                        backgroundImage={Fondo}
-                        mainImage={imageP}
-                        imageAlt="Asesoría financiera"
-                        subtitle={
-                            <>
-                                <span className={styles.highlight2}>¡MÁS DE 15 AÑOS DE</span> EXPERIENCIA!
-                            </>
-                        }
-                        description="Con un gran equipo de asesores certificados listos para brindar la mejor asesoría financiera y más de 15 años de experiencia hemos logrado ser reconocidos por nuestros socios comerciales a nivel nacional, logrando un impacto positivo en la vida de cada cliente."
-                        reverse
-                    />
                     <section
                         className={styles.containerMarca}
                         ref={aliadosRef}
@@ -176,13 +183,6 @@ export function Nosotros() {
                         </SectionSubtitle>
                     </section>
                     <BrandsStrip brands={brands} />
-
-                    <section className={styles.containerTittle}>
-                        <SectionSubtitle>
-                            <span className={styles.highlight2}>NUESTROS </span>LOGROS
-                        </SectionSubtitle>
-                    </section>
-                    <CardHover items={wins} />
 
                 </div>
             </div>
