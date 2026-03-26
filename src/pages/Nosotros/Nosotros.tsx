@@ -9,8 +9,8 @@ import visionIcon from '../../assets/icons/vision.png'
 import valoresIcon from '../../assets/icons/valores.png'
 import { SectionSubtitle } from '../../components/shared/SectionSubtitle/SectionSubtitle'
 import { AboutSection } from '../../components/shared/AboutSection/AboutSection'
-import imageP from '../../assets/images/SWPAREJA1-SINFONDO.png'
-import Fondo from '../../assets/images/FONDO1.png'
+import imageP from '../../assets/images/LINDA2.png'
+import Fondo from '../../assets/images/LINDA1.jpg'
 import { BrandsStrip } from '../../components/shared/BrandsStrip/BrandsStrip'
 import mapfre from '../../assets/logo/MAPFRE.png'
 import infonavit from '../../assets/logo/INFONAVIT.png'
@@ -20,6 +20,11 @@ import skandia from '../../assets/logo/SKANDIA.png'
 import dimex from '../../assets/logo/DIMEX.png'
 import crabi from '../../assets/logo/CRABI.png'
 import woaw from '../../assets/logo/WOAW.png'
+import { CardHover } from '../../components/shared/CardHover/CardHover'
+import logro1 from '../../assets/images/MDRT.jpeg'
+import logro2 from '../../assets/images/MAPFRE_MILLA.png'
+import logro3 from '../../assets/images/ASESORIA_PREVISIONAL.jpg'
+import logro4 from '../../assets/images/CLIENTES.jpg'
 
 const services: ServiceCardProps[] = [
     {
@@ -59,6 +64,37 @@ const brands = [
     { logo: dimex, alt: 'dimex', name: 'dimex' },
     { logo: crabi, alt: 'crabi', name: 'crabi' },
     { logo: woaw, alt: 'woaw', name: 'woaw' }
+]
+
+const wins = [
+    {
+        title: "MDRT MÉXICO",
+        description: "MEJORES ASESORES DE ",
+        highlight: "SEGUROS EN MÉXICO.",
+        image: logro1,
+        imageAlt: "mdrt"
+    },
+    {
+        title: "MAPFRE MILLA",
+        description: "MEJORES ASESORES DE SEGURODE VIDA EN",
+        highlight: "LATINOAMÉRICA.",
+        image: logro2,
+        imageAlt: "mapfre"
+    },
+    {
+        title: "ASESORÍA PREVISIONAL",
+        description: "EXCELENCIA EN ASESORÍA PREVISIONAL",
+        highlight: "(PENSIONES Y RETIRO).",
+        image: logro3,
+        imageAlt: "asesoría"
+    },
+    {
+        title: "+500",
+        description: "PENSIONES ",
+        highlight: "MEJORADAS.",
+        image: logro4,
+        imageAlt: "pensiones"
+    }
 ]
 
 export function Nosotros() {
@@ -146,6 +182,8 @@ export function Nosotros() {
                             <span className={styles.highlight2}>NUESTROS </span>LOGROS
                         </SectionSubtitle>
                     </section>
+                    <CardHover items={wins} />
+
                 </div>
             </div>
         </section >
