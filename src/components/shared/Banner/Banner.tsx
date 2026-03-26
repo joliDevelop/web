@@ -4,16 +4,19 @@ interface BannerProps {
     title: React.ReactNode
     subtitle?: string
     buttonText?: string
-    backgroundImage: string
     onButtonClick?: () => void
+    secondaryButtonText?: string
+    onSecondaryButtonClick?: () => void
+    backgroundImage: string
 }
-
 export const Banner = ({
     title,
     subtitle,
     buttonText,
     backgroundImage,
-    onButtonClick
+    onButtonClick,
+    secondaryButtonText,
+    onSecondaryButtonClick
 }: BannerProps) => {
     return (
         <div
@@ -35,14 +38,25 @@ export const Banner = ({
                     </p>
                 )}
 
-                {buttonText && (
+                {(buttonText || secondaryButtonText) && (
                     <div className={styles.cta}>
-                        <button
-                            className="btn btn-secondary"
-                            onClick={onButtonClick}
-                        >
-                            {buttonText}
-                        </button>
+                        {buttonText && (
+                            <button
+                                className="btn btn-secondary"
+                                onClick={onButtonClick}
+                            >
+                                {buttonText}
+                            </button>
+                        )}
+
+                        {secondaryButtonText && (
+                            <button
+                                className="btn btn-outline"
+                                onClick={onSecondaryButtonClick}
+                            >
+                                {secondaryButtonText}
+                            </button>
+                        )}
                     </div>
                 )}
             </div>
