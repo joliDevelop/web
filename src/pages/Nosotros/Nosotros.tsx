@@ -1,4 +1,5 @@
 import { Banner } from '../../components/shared/Banner/Banner'
+import { useRef } from 'react'
 import styles from './Nosotros.module.css'
 import bannerHome from '../../assets/images/banner1.webp'
 import { SectionTitle } from '../../components/shared/SectionTitle/SectionTitle'
@@ -11,15 +12,14 @@ import { AboutSection } from '../../components/shared/AboutSection/AboutSection'
 import imageP from '../../assets/images/SWPAREJA1-SINFONDO.png'
 import Fondo from '../../assets/images/FONDO1.png'
 import { BrandsStrip } from '../../components/shared/BrandsStrip/BrandsStrip'
-import mapfre from '../../assets/logo/mapfre.png'
+import mapfre from '../../assets/logo/MAPFRE.png'
 import infonavit from '../../assets/logo/INFONAVIT.png'
-import bupa from '../../assets/logo/bupa.png'
-import hdi from '../../assets/logo/HDI.png'
-import qualitas from '../../assets/logo/qualitas.png'
-import skandia from '../../assets/logo/skandia.png'
-import dimex from '../../assets/logo/dimex.webp'
-import crabi from '../../assets/logo/crabi.png'
-import woaw from '../../assets/logo/woaw.png'
+import bupa from '../../assets/logo/BUPA.png'
+import qualitas from '../../assets/logo/QUALITAS.png'
+import skandia from '../../assets/logo/SKANDIA.png'
+import dimex from '../../assets/logo/DIMEX.png'
+import crabi from '../../assets/logo/CRABI.png'
+import woaw from '../../assets/logo/WOAW.png'
 
 const services: ServiceCardProps[] = [
     {
@@ -54,7 +54,6 @@ const brands = [
     { logo: mapfre, alt: 'mapfre', name: 'mapfre' },
     { logo: infonavit, alt: 'infonavit', name: 'infonavit' },
     { logo: bupa, alt: 'bupa', name: 'bupa' },
-    { logo: hdi, alt: 'hdi', name: 'hdi' },
     { logo: qualitas, alt: 'qualitas', name: 'qualitas' },
     { logo: skandia, alt: 'skandia', name: 'skandia' },
     { logo: dimex, alt: 'dimex', name: 'dimex' },
@@ -63,6 +62,22 @@ const brands = [
 ]
 
 export function Nosotros() {
+    const aliadosRef = useRef<HTMLDivElement | null>(null)
+
+    const handleScrollToAliados = () => {
+        const offset = 100 // ajusta según tu navbar
+        const element = aliadosRef.current
+
+        if (element) {
+            const y = element.getBoundingClientRect().top + window.scrollY - offset
+
+            window.scrollTo({
+                top: y,
+                behavior: 'smooth'
+            })
+        }
+    }
+
     return (
         <section className={styles.nosotros}>
             <Banner
@@ -74,6 +89,9 @@ export function Nosotros() {
                 }
                 subtitle="Especialistas en estrategias deincremento de pensión, retiro, inversión y seguros."
                 buttonText="¡contactanos!"
+                secondaryButtonText="Alianzas"
+                onSecondaryButtonClick={handleScrollToAliados}
+
             />
 
             <div className={styles.container}>
@@ -95,7 +113,7 @@ export function Nosotros() {
                         ))}
                     </div>
 
-                    <section className={styles.containerBody}>
+                    <section className={styles.containerTittle}>
                         <SectionSubtitle>
                             AYUDAMOS<span className={styles.highlight2}> A NUESTROS CLIENTES A CONSTRUIR UN</span> FUTURO <span className={styles.highlight2}>FINANCIERO</span> SEGURO Y ESTABLE.
                         </SectionSubtitle>
@@ -113,13 +131,21 @@ export function Nosotros() {
                         description="Con un gran equipo de asesores certificados listos para brindar la mejor asesoría financiera y más de 15 años de experiencia hemos logrado ser reconocidos por nuestros socios comerciales a nivel nacional, logrando un impacto positivo en la vida de cada cliente."
                         reverse
                     />
-                    <section className={styles.containerMarca}>
+                    <section
+                        className={styles.containerMarca}
+                        ref={aliadosRef}
+                    >
                         <SectionSubtitle>
                             <span className={styles.highlight2}>NUESTROS </span>ALIADOS
                         </SectionSubtitle>
                     </section>
                     <BrandsStrip brands={brands} />
 
+                    <section className={styles.containerTittle}>
+                        <SectionSubtitle>
+                            <span className={styles.highlight2}>NUESTROS </span>LOGROS
+                        </SectionSubtitle>
+                    </section>
                 </div>
             </div>
         </section >
