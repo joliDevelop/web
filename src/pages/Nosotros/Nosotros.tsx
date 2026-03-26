@@ -12,14 +12,14 @@ import { AboutSection } from '../../components/shared/AboutSection/AboutSection'
 import imageP from '../../assets/images/LINDA2.png'
 import Fondo from '../../assets/images/LINDA1.jpg'
 import { BrandsStrip } from '../../components/shared/BrandsStrip/BrandsStrip'
-import mapfre from '../../assets/logo/MAPFRE.png'
-import infonavit from '../../assets/logo/INFONAVIT.png'
-import bupa from '../../assets/logo/BUPA.png'
-import qualitas from '../../assets/logo/QUALITAS.png'
-import skandia from '../../assets/logo/SKANDIA.png'
-import dimex from '../../assets/logo/DIMEX.png'
-import crabi from '../../assets/logo/CRABI.png'
-import woaw from '../../assets/logo/WOAW.png'
+import mapfre from '../../assets/logo/mapfre.png'
+import infonavit from '../../assets/logo/infonavit.png'
+import bupa from '../../assets/logo/bupa.png'
+import qualitas from '../../assets/logo/qualitas.png'
+import skandia from '../../assets/logo/skandia.png'
+import dimex from '../../assets/logo/dimex.png'
+import crabi from '../../assets/logo/crabi.png'
+import woaw from '../../assets/logo/woaw.png'
 import { CardHover } from '../../components/shared/CardHover/CardHover'
 import logro1 from '../../assets/images/MDRT.jpeg'
 import logro2 from '../../assets/images/MAPFRE_MILLA.png'
@@ -57,13 +57,13 @@ const services: ServiceCardProps[] = [
 
 const brands = [
     { logo: mapfre, alt: 'mapfre', name: 'mapfre' },
-    { logo: infonavit, alt: 'infonavit', name: 'infonavit' },
     { logo: bupa, alt: 'bupa', name: 'bupa' },
     { logo: qualitas, alt: 'qualitas', name: 'qualitas' },
     { logo: skandia, alt: 'skandia', name: 'skandia' },
     { logo: dimex, alt: 'dimex', name: 'dimex' },
     { logo: crabi, alt: 'crabi', name: 'crabi' },
-    { logo: woaw, alt: 'woaw', name: 'woaw' }
+    { logo: woaw, alt: 'woaw', name: 'woaw' },
+    { logo: infonavit, alt: 'infonavit', name: 'infonavit' }
 ]
 
 const wins = [
