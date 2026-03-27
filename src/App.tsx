@@ -3,6 +3,7 @@ import { Navbar } from './components/Navbar/Navbar'
 import { Footer } from './components/Footer/Footer'
 import { Home } from './pages/Home/Home'
 import { Nosotros } from './pages/Nosotros/Nosotros'
+import { Seguros } from './pages/Seguros/Seguros'
 import { ResetPass } from './pages/Reset/Reset'
 
 function MainLayout() {
@@ -30,6 +31,7 @@ export default function App() {
       <Route element={<MainLayout />}>
         <Route path="/" element={<Home />} />
         <Route path="/nosotros" element={<Nosotros />} />
+        <Route path="/seguros" element={<Seguros />} />
       </Route>
 
       <Route element={<AuthLayout />}>
