@@ -10,11 +10,43 @@ import phone from '../../assets/icons/llamar.svg'
 import mail from '../../assets/icons/email.svg'
 import location from '../../assets/icons/ubicacion.svg'
 
+const message = encodeURIComponent(
+    "Hola 👋, vengo del sitio web de JOLI y me llamó mucho la atención su servicio 😊 ¿Podrían brindarme más información, por favor?"
+)
+const whatsappUrl = `https://api.whatsapp.com/send?phone=524428688669&text=${message}`
+
+const socialLinks = [
+    {
+        name: 'Facebook',
+        url: 'https://www.facebook.com/profile.php?id=61577707551671',
+        icon: facebook
+    },
+    {
+        name: 'Instagram',
+        url: 'https://www.instagram.com/joli_pensiones_seguros/',
+        icon: instagram
+    },
+    {
+        name: 'LinkedIn',
+        url: 'https://www.linkedin.com/company/jolipensionesyseguros/',
+        icon: linkedin
+    },
+    {
+        name: 'WhatsApp',
+        url: whatsappUrl,
+        icon: whatsapp
+    },
+    {
+        name: 'TikTok',
+        url: 'https://www.tiktok.com/@joli_pensiones_seguros',
+        icon: tiktok
+    }
+]
+
 export function Footer() {
     return (
         <footer className={styles.footer}>
             <div className={styles.container}>
-
                 <div className={styles.social}>
                     <img src={logo} alt="Joli" className={styles.logo} />
 
@@ -23,49 +55,46 @@ export function Footer() {
                     </h3>
 
                     <div className={styles.icons}>
-                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-                            <img src={facebook} alt="facebook" />
-                        </a>
-
-                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-                            <img src={instagram} alt="instagram" />
-                        </a>
-
-                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                            <img src={linkedin} alt="linkedin" />
-                        </a>
-
-                        <a href="https://wa.me/524428688669" target="_blank" rel="noopener noreferrer">
-                            <img src={whatsapp} alt="whatsapp" />
-                        </a>
-
-                        <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer">
-                            <img src={tiktok} alt="tiktok" />
-                        </a>
+                        {socialLinks.map((social) => (
+                            <a
+                                key={social.name}
+                                href={social.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label={social.name}
+                                className={styles.iconLink}
+                            >
+                                <img src={social.icon} alt={social.name} />
+                            </a>
+                        ))}
                     </div>
                 </div>
 
                 <div className={styles.info}>
                     <h3 className={styles.infoTitle}>INFORMACIÓN DE LA EMPRESA</h3>
 
-                    <p className={styles.infoItem}>
-                        <img src={phone} alt="telefono" />
-                        <span>Tel. 442 868 86 69</span>
-                    </p>
+                    <div className={styles.infoItem}>
+                        <img src={phone} alt="" aria-hidden="true" />
+                        <a href="tel:+524428688669" className={styles.infoLink}>
+                            Tel. 442 868 86 69
+                        </a>
+                    </div>
 
-                    <p className={styles.infoItem}>
-                        <img src={mail} alt="correo" />
-                        <span>comercial@joli.com.mx</span>
-                    </p>
+                    <div className={styles.infoItem}>
+                        <img src={mail} alt="" aria-hidden="true" />
+                        <a href="mailto:comercial@joli.com.mx" className={styles.infoLink}>
+                            comercial@joli.com.mx
+                        </a>
+                    </div>
 
-                    <p className={styles.infoItem}>
-                        <img src={location} alt="direccion" />
+                    <div className={styles.infoItem}>
+                        <img src={location} alt="" aria-hidden="true" />
                         <span>
                             Blvd. Bernardo Quintana Arrioja 14 <br />
                             Alamos 2da Secc. <br />
                             Santiago de Querétaro
                         </span>
-                    </p>
+                    </div>
                 </div>
 
                 <div className={styles.contact}>
