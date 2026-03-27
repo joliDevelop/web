@@ -6,7 +6,7 @@ interface AboutSectionProps {
     mainImage: string
     imageAlt: string
     subtitle: React.ReactNode
-    description: string
+    description: string | string[]
     reverse?: boolean
 }
 
@@ -18,9 +18,10 @@ export function AboutSection({
     description,
     reverse = false
 }: AboutSectionProps) {
+    const isList = Array.isArray(description)
+
     return (
         <section className={`${styles.boxGrid} ${reverse ? styles.reverse : ''}`}>
-
             <div className={styles.boxColumn}>
                 <div
                     className={styles.box}
@@ -34,16 +35,25 @@ export function AboutSection({
                 </div>
             </div>
 
-            <div className={styles.infoColumn}>
+            <div className={`${styles.infoColumn} ${isList ? styles.infoColumnList : ''}`}>
                 <SectionSubtitle>
                     {subtitle}
                 </SectionSubtitle>
 
-                <p className={styles.textInfo}>
-                    {description}
-                </p>
+                {isList ? (
+                    <ul className={styles.textList}>
+                        {description.map((item, index) => (
+                            <li key={index} className={styles.textListItem}>
+                                {item}
+                            </li>
+                        ))}
+                    </ul>
+                ) : (
+                    <p className={styles.textInfo}>
+                        {description}
+                    </p>
+                )}
             </div>
-
         </section>
     )
 }
