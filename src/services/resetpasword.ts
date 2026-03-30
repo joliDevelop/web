@@ -4,7 +4,7 @@ import { CONFIG } from '../config/app.config'
 export const validarTokenRecuperacion = async (token: string) => {
   try {
     const response = await axios.get(
-      `${CONFIG.API_URL}/users/validar-token-recuperacion/${token}`
+      `${CONFIG.API_URL}/recover/validar-token-recuperacion/${token}`
     )
 
     return response.data
