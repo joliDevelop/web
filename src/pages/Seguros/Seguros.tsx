@@ -140,7 +140,6 @@ export function Seguros() {
                         </SectionSubtitle>
                     </section>
                     <AboutSection
-
                         backgroundImage={Fondo}
                         mainImage={imageP}
                         imageAlt="Asesoría financiera"
@@ -151,8 +150,22 @@ export function Seguros() {
                             "Protección de bienes, inmuebles y activos.",
                             "Respaldo financiero ante siniestros.",
                         ]}
-
                     />
+
+                    <section className={styles.containerTittle}>
+                        <SectionSubtitle>
+                            <span className={styles.highlight2}>SEGURO DE </span>AUTO <span className={styles.highlight2}>Y FLOTILLAS</span>
+                        </SectionSubtitle>
+                    </section>
+                    <AboutSection
+                        backgroundImage={Fondo}
+                        mainImage={imageP}
+                        imageAlt="Asesoría financiera"
+                        subtitle="Aseguradoras alidas"
+                        description="Trabajamos con aseguradoras solidas como Bupa, Mapfre, Quálitas, Skandia, entre otras, para ofrecerte opciones confiables y adaptadas a tus necesidades."
+                        reverse
+                    />
+
                 </div>
             </div>
         </section>
