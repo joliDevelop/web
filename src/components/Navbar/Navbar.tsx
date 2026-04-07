@@ -28,7 +28,7 @@ export function Navbar() {
         <nav className={styles.links}>
           <NavLink to="/nosotros">Nosotros</NavLink>
           <NavLink to="/seguros">Seguros</NavLink>
-          <a href="#contacto">Contacto</a>
+          <NavLink to="/contacto">Contacto</NavLink>
         </nav>
       </div>
     </header>
