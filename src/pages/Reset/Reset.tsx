@@ -5,7 +5,7 @@ import logo from '../../assets/logo/LOGOS-01.png'
 import {
     validarTokenRecuperacion,
     restablecerContrasena
-} from '../../services/resetpasword'
+} from '../../services/ResetPasword.service.ts'
 
 export function ResetPass() {
     const [searchParams] = useSearchParams()
