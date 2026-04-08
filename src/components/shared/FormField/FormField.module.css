@@ -1,0 +1,42 @@
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+}
+
+.label {
+    font-size: 1.25rem;
+    font-weight: 800;
+    font-style: italic;
+    text-transform: uppercase;
+    color: #0b4ea2;
+    line-height: 1;
+}
+
+.control {
+    width: 100%;
+    border: 2px solid #8e8e8e;
+    border-radius: 14px;
+    background: transparent;
+    padding: 1rem 1.1rem;
+    font-size: 1rem;
+    color: #1f1f1f;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.control::placeholder {
+    color: #cfcfcf;
+    font-style: italic;
+}
+
+.control:focus {
+    border-color: #0b4ea2;
+    box-shadow: 0 0 0 3px rgba(11, 78, 162, 0.12);
+}
+
+.textarea {
+    min-height: 165px;
+    resize: none;
+}
