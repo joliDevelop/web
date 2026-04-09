@@ -8,6 +8,15 @@
     align-items: start;
 }
 
+.formError {
+    grid-column: 1 / -1;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #d93025;
+    text-align: center;
+    margin-top: -0.25rem;
+}
+
 .leftColumn,
 .rightColumn {
     display: flex;
