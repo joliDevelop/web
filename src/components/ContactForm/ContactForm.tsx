@@ -74,49 +74,53 @@ export function ContactForm() {
 
     return (
         <form className={styles.form} onSubmit={handleSubmit}>
-            <FormField
-                label="Nombre completo:"
-                name="nombre_completo"
-                value={formData.nombre_completo}
-                placeholder="Ejemplo: Juan Ramirez Orozco."
-                onChange={handleChange}
-            />
+            <div className={styles.leftColumn}>
+                <FormField
+                    label="Nombre completo:"
+                    name="nombre_completo"
+                    value={formData.nombre_completo}
+                    placeholder="Ejemplo: Juan Ramirez Orozco."
+                    onChange={handleChange}
+                />
 
-            <FormField
-                label="Número de contacto:"
-                name="telefono"
-                type="tel"
-                value={formData.telefono}
-                placeholder="Ejemplo: 4421234567."
-                onChange={handleChange}
-            />
+                <FormField
+                    label="Correo electrónico:"
+                    name="email"
+                    type="email"
+                    value={formData.email}
+                    placeholder="Ejemplo: correo@ejemplo.com."
+                    onChange={handleChange}
+                />
 
-            <FormField
-                label="Correo electrónico:"
-                name="email"
-                type="email"
-                value={formData.email}
-                placeholder="Ejemplo: correo@ejemplo.com."
-                onChange={handleChange}
-            />
+                <FormField
+                    label="Edad:"
+                    name="edad"
+                    type="number"
+                    value={formData.edad}
+                    placeholder="Ejemplo: 25."
+                    onChange={handleChange}
+                />
+            </div>
 
-            <FormField
-                label="Edad:"
-                name="edad"
-                type="number"
-                value={formData.edad}
-                placeholder="Ejemplo: 25."
-                onChange={handleChange}
-            />
+            <div className={styles.rightColumn}>
+                <FormField
+                    label="Número de contacto:"
+                    name="telefono"
+                    type="tel"
+                    value={formData.telefono}
+                    placeholder="Ejemplo: 4421234567."
+                    onChange={handleChange}
+                />
 
-            <FormField
-                label="Comentario:"
-                name="comentarios"
-                value={formData.comentarios}
-                placeholder="Ejemplo: Me interesa cotizar mi seguro de vida."
-                as="textarea"
-                onChange={handleChange}
-            />
+                <FormField
+                    label="Comentario:"
+                    name="comentarios"
+                    value={formData.comentarios}
+                    placeholder="Ejemplo: Me interesa cotizar mi seguro de vida."
+                    as="textarea"
+                    onChange={handleChange}
+                />
+            </div>
 
             <div className={styles.buttonWrapper}>
                 <Button text="Enviar información" type="submit" />
