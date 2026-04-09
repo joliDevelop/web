@@ -1,3 +1,11 @@
 .contacto {
     padding: 0;
 }
+
+.highlight2 {
+    color: var(--color-secondary);
+}
+
+.highlight {
+    color: white;
+}

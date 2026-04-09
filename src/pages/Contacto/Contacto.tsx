@@ -2,6 +2,7 @@ import { Banner } from '../../components/shared/Banner/Banner'
 import bannerHome from '../../assets/images/banner1.webp'
 import styles from './Contacto.module.css'
 import { ContactForm } from '../../components/ContactForm/ContactForm'
+import { SectionSubtitle } from '../../components/shared/SectionSubtitle/SectionSubtitle'
 
 export function Contacto() {
     return (
@@ -10,13 +11,18 @@ export function Contacto() {
                 backgroundImage={bannerHome}
                 title={
                     <>
-                        ¡OBTÉN LA <span className={styles.highlight}>MEJOR</span> PENSIÓN{" "}
-                        <span className={styles.highlight}>POSIBLE!</span>
+                        <span className={styles.highlight}>¡</span>CONTACTANOS
+                        <span className={styles.highlight}>!</span>
                     </>
                 }
-                subtitle="Simula tu pensión en Modalidad 40 y conoce tu posible retiro."
-                buttonText="Simular mi pensión"
+                subtitle=""
+                buttonText=""
             />
+
+            <SectionSubtitle>
+                <span className={styles.highlight2}>ENVIANOS TUS </span>DATOS<span className={styles.highlight2}> Y UN ASESOR SE PONDRA EN CONTACTO</span> CONTIGO.
+            </SectionSubtitle>
+
             <ContactForm />
 
         </section>
