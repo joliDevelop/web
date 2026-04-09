@@ -7,6 +7,8 @@ interface FormFieldProps {
     placeholder?: string
     type?: 'text' | 'email' | 'tel' | 'number'
     as?: 'input' | 'textarea'
+    error?: string
+    required?: boolean
     onChange: (
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
     ) => void
@@ -19,12 +21,20 @@ export function FormField({
     placeholder,
     type = 'text',
     as = 'input',
+    error,
+    required,
     onChange
 }: FormFieldProps) {
+    const controlClassName =
+        `${styles.control} ` +
+        `${as === 'textarea' ? styles.textarea : ''} ` +
+        `${error ? styles.controlError : ''}`
+
     return (
         <div className={styles.field}>
             <label htmlFor={name} className={styles.label}>
                 {label}
+                {required && <span className={styles.required}> *</span>}
             </label>
 
             {as === 'textarea' ? (
@@ -34,7 +44,7 @@ export function FormField({
                     value={value}
                     placeholder={placeholder}
                     onChange={onChange}
-                    className={`${styles.control} ${styles.textarea}`}
+                    className={controlClassName}
                 />
             ) : (
                 <input
@@ -44,9 +54,11 @@ export function FormField({
                     value={value}
                     placeholder={placeholder}
                     onChange={onChange}
-                    className={styles.control}
+                    className={controlClassName}
                 />
             )}
+
+            {error && <span className={styles.error}>{error}</span>}
         </div>
     )
 }

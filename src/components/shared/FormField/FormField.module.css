@@ -42,3 +42,22 @@
     min-height: 158px;
     resize: none;
 }
+
+.controlError {
+    border-color: #d93025;
+    box-shadow: 0 0 0 3px rgba(217, 48, 37, 0.12);
+}
+
+.error {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #d93025;
+    line-height: 1.2;
+    margin-top: -0.15rem;
+}
+
+.required {
+    color: #d93025;
+    font-weight: 700;
+    margin-left: 4px;
+}

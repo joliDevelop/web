@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import { FormField } from '../shared/FormField/FormField'
 import { Button } from '../shared/Button/Button'
 import {
@@ -16,6 +16,14 @@ interface ContactFormData {
     comentarios: string
 }
 
+interface ContactFormErrors {
+    nombre_completo?: string
+    telefono?: string
+    email?: string
+    edad?: string
+    contacto?: string
+}
+
 export function ContactForm() {
     const [formData, setFormData] = useState<ContactFormData>({
         nombre_completo: '',
@@ -24,6 +32,9 @@ export function ContactForm() {
         edad: '',
         comentarios: ''
     })
+
+    const [errors, setErrors] = useState<ContactFormErrors>({})
+    const [isSubmitting, setIsSubmitting] = useState(false)
 
     const handleChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -34,46 +45,147 @@ export function ContactForm() {
             ...prev,
             [name]: value
         }))
+
+        setErrors((prev) => ({
+            ...prev,
+            [name]: '',
+            contacto: ''
+        }))
     }
+
+    const validateForm = (): ContactFormErrors => {
+        const newErrors: ContactFormErrors = {}
+
+        const nombre = formData.nombre_completo.trim()
+        const telefono = formData.telefono.trim()
+        const email = formData.email.trim()
+        const edad = formData.edad.trim()
+
+        const telefonoRegex = /^\d{10}$/
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+        if (!nombre) {
+            newErrors.nombre_completo = 'El nombre completo es obligatorio.'
+        } else if (nombre.length < 5) {
+            newErrors.nombre_completo = 'Ingresa un nombre válido.'
+        }
+
+        if (!edad) {
+            newErrors.edad = 'La edad es obligatoria.'
+        } else {
+            const edadNumero = Number(edad)
+
+            if (Number.isNaN(edadNumero) || !Number.isInteger(edadNumero)) {
+                newErrors.edad = 'La edad debe ser un número entero.'
+            } else if (edadNumero < 18 || edadNumero > 100) {
+                newErrors.edad = 'Ingresa una edad válida.'
+            }
+        }
+
+        if (!telefono && !email) {
+            newErrors.contacto = 'Ingresa al menos un teléfono o un correo electrónico.'
+        }
+
+        if (telefono && !telefonoRegex.test(telefono)) {
+            newErrors.telefono = 'El teléfono debe tener 10 dígitos.'
+        }
+
+        if (email && !emailRegex.test(email)) {
+            newErrors.email = 'Ingresa un correo electrónico válido.'
+        }
+
+        return newErrors
+    }
+
+    const isFormReady = useMemo(() => {
+        const nombre = formData.nombre_completo.trim()
+        const telefono = formData.telefono.trim()
+        const email = formData.email.trim()
+        const edad = formData.edad.trim()
+
+        const telefonoRegex = /^\d{10}$/
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+        const nombreValido = nombre.length >= 5
+
+        const edadNumero = Number(edad)
+        const edadValida =
+            edad !== '' &&
+            Number.isInteger(edadNumero) &&
+            edadNumero >= 18 &&
+            edadNumero <= 100
+
+        const telefonoValido = telefono ? telefonoRegex.test(telefono) : false
+        const emailValido = email ? emailRegex.test(email) : false
+
+        const tieneContactoValido = telefonoValido || emailValido
+
+        return nombreValido && edadValida && tieneContactoValido
+    }, [formData])
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
 
-        const { nombre_completo, telefono, email, edad, comentarios } = formData
+        const validationErrors = validateForm()
+        setErrors(validationErrors)
 
-        if (telefono && email) {
-            await sendFullContact({
-                nombre_completo,
-                telefono,
-                email,
-                edad,
-                comentarios
-            })
+        if (Object.keys(validationErrors).length > 0) {
             return
         }
 
-        if (email) {
-            await sendContactWithEmail({
-                nombre_completo,
-                email,
-                edad,
-                comentarios
-            })
-            return
-        }
+        const {
+            nombre_completo,
+            telefono,
+            email,
+            edad,
+            comentarios
+        } = formData
 
-        if (telefono) {
-            await sendContactWithPhone({
-                nombre_completo,
-                telefono,
-                edad,
-                comentarios
+        try {
+            setIsSubmitting(true)
+
+            if (telefono && email) {
+                await sendFullContact({
+                    nombre_completo,
+                    telefono,
+                    email,
+                    edad,
+                    comentarios
+                })
+            } else if (email) {
+                await sendContactWithEmail({
+                    nombre_completo,
+                    email,
+                    edad,
+                    comentarios
+                })
+            } else if (telefono) {
+                await sendContactWithPhone({
+                    nombre_completo,
+                    telefono,
+                    edad,
+                    comentarios
+                })
+            }
+
+            setFormData({
+                nombre_completo: '',
+                telefono: '',
+                email: '',
+                edad: '',
+                comentarios: ''
             })
+
+            setErrors({})
+        } catch (error) {
+            console.error('Error al enviar el formulario:', error)
+        } finally {
+            setIsSubmitting(false)
         }
     }
 
     return (
-        <form className={styles.form} onSubmit={handleSubmit}>
+        <form className={styles.form} onSubmit={handleSubmit} noValidate>
             <div className={styles.leftColumn}>
                 <FormField
                     label="Nombre completo:"
@@ -81,6 +193,8 @@ export function ContactForm() {
                     value={formData.nombre_completo}
                     placeholder="Ejemplo: Juan Ramirez Orozco."
                     onChange={handleChange}
+                    error={errors.nombre_completo}
+                    required
                 />
 
                 <FormField
@@ -90,6 +204,9 @@ export function ContactForm() {
                     value={formData.email}
                     placeholder="Ejemplo: correo@ejemplo.com."
                     onChange={handleChange}
+                    error={errors.email}
+                    required
+
                 />
 
                 <FormField
@@ -99,6 +216,8 @@ export function ContactForm() {
                     value={formData.edad}
                     placeholder="Ejemplo: 25."
                     onChange={handleChange}
+                    error={errors.edad}
+                    required
                 />
             </div>
 
@@ -110,6 +229,8 @@ export function ContactForm() {
                     value={formData.telefono}
                     placeholder="Ejemplo: 4421234567."
                     onChange={handleChange}
+                    error={errors.telefono}
+                    required
                 />
 
                 <FormField
@@ -122,8 +243,16 @@ export function ContactForm() {
                 />
             </div>
 
+            {errors.contacto && (
+                <p className={styles.formError}>{errors.contacto}</p>
+            )}
+
             <div className={styles.buttonWrapper}>
-                <Button text="Enviar información" type="submit" />
+                <Button
+                    text={isSubmitting ? 'Enviando...' : 'Enviar información'}
+                    type="submit"
+                    disabled={!isFormReady || isSubmitting}
+                />
             </div>
         </form>
     )
