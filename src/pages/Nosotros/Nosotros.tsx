@@ -123,7 +123,7 @@ export function Nosotros() {
                         SOBRE <span className={styles.highlight}>NOSOTROS</span>
                     </>
                 }
-                subtitle="Especialistas en estrategias deincremento de pensión, retiro, inversión y seguros."
+                subtitle="Especialistas en estrategias de incremento de pensión, retiro, inversión y seguros."
                 buttonText="¡contactanos!"
                 secondaryButtonText="Alianzas"
                 onSecondaryButtonClick={handleScrollToAliados}
@@ -150,9 +150,11 @@ export function Nosotros() {
                         description="Con un gran equipo de asesores certificados listos para brindar la mejor asesoría financiera y más de 15 años de experiencia hemos logrado ser reconocidos por nuestros socios comerciales a nivel nacional, logrando un impacto positivo en la vida de cada cliente."
                         reverse
                     />
-                    <SectionTitle>
-                        <span className={styles.highlight2}>MISIÓN</span>, VISIÓN, <span className={styles.highlight2}>VALORES</span>
-                    </SectionTitle>
+                    <section className={styles.containerTittleSection}>
+                        <SectionTitle>
+                            <span className={styles.highlight2}>MISIÓN</span>, VISIÓN, <span className={styles.highlight2}>VALORES</span>
+                        </SectionTitle>
+                    </section>
 
                     <div className={styles.cardGrid}>
                         {services.map((service) => (

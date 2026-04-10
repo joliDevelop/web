@@ -66,29 +66,29 @@
 
 @media (max-width: 768px) {
 
-    .banner {
-        height: auto;
-        min-height: 420px;
-    }
-
     .heroBanner {
         margin: 0 24px;
         padding: 130px 0 72px 0;
-    }
-
-    .titleBanner {
-        font-size: 42px;
-        line-height: 1.15;
-    }
-
-    .subtitleBanner {
-        font-size: 16px;
-        margin-bottom: 28px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
     .cta {
-        flex-direction: column;
-        align-items: stretch;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .cta button {
+        width: auto;
+        min-width: 180px;
+        max-width: 240px;
     }
 }
 
@@ -105,5 +105,14 @@
 
     .subtitleBanner {
         font-size: 15px;
+    }
+
+    .cta {
+        gap: 12px;
+    }
+
+    .cta button {
+        min-width: 160px;
+        max-width: 200px;
     }
 }

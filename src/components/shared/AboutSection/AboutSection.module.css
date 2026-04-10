@@ -102,24 +102,41 @@
 
 @media (max-width: 768px) {
     .boxGrid {
-        grid-template-columns: 1fr;
-        gap: 32px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
         margin-top: 40px;
     }
 
+    .boxColumn {
+        order: 2;
+        width: 100%;
+    }
+
     .infoColumn {
-        align-items: center;
+        display: contents;
+    }
+
+    .infoColumn :global(h2) {
+        order: 1;
+        text-align: center;
+    }
+
+    .textInfo,
+    .textList {
+        order: 3;
+        max-width: 100%;
         text-align: center;
     }
 
     .textInfo {
-        max-width: 100%;
         font-size: 16px;
         line-height: 1.6;
+        margin-top: 0;
     }
 
     .textList {
-        max-width: 100%;
+        margin-top: 0;
     }
 
     .infoColumnList .textList {
@@ -146,6 +163,10 @@
 }
 
 @media (max-width: 480px) {
+    .boxGrid {
+        gap: 20px;
+    }
+
     .textInfo {
         font-size: 15px;
     }

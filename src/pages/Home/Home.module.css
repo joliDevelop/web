@@ -117,6 +117,14 @@
 }
 
 @media (max-width: 768px) {
+
+    /* 🔥 separación del banner */
+    .hero {
+        margin-top: 32px;
+        padding: 0 20px;
+        /* 🔥 aire lateral */
+    }
+
     .mapsTitle {
         font-size: 30px;
         padding: 0;
@@ -124,19 +132,32 @@
 
     .cardGrid {
         gap: 18px;
+        margin-top: 40px;
+        /* 🔥 menos exagerado */
     }
 
     .mapsSection {
         padding: 40px 0;
     }
 
+    /* 🔥 mapa arriba, comentarios abajo */
     .mapsGrid {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
         gap: 32px;
     }
 
     .mapColumn {
         width: 100%;
+        order: 1;
+    }
+
+    .commentsColumn {
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+        order: 2;
+        height: auto;
     }
 
     .mapColumn iframe {
@@ -144,23 +165,27 @@
         border-radius: 16px;
     }
 
-    .commentsColumn {
-        max-width: 100%;
-        text-align: center;
-    }
-
     .commentsTitle {
         font-size: 30px;
+        margin-bottom: 16px;
+    }
+
+    .commentsText {
+        max-height: 420px;
+        padding-right: 4px;
     }
 }
 
 @media (max-width: 480px) {
-    .containerHome {
-        padding: 0;
+    .hero {
+        margin-top: 24px;
+        padding: 0 16px;
+        /* 🔥 más compacto */
+        width: 100%;
     }
 
-    .hero {
-        width: 100%;
+    .containerHome {
+        padding: 0;
     }
 
     .cardGrid {
@@ -168,8 +193,13 @@
         margin-top: 32px;
     }
 
+    /* 🔥 mapa sigue full width */
     .mapsContainer {
         width: 92%;
+    }
+
+    .mapsGrid {
+        gap: 24px;
     }
 
     .mapColumn iframe {
@@ -179,6 +209,11 @@
 
     .commentsTitle {
         font-size: 26px;
+        margin-bottom: 14px;
+    }
+
+    .commentsText {
+        max-height: 360px;
     }
 
     .mapsTitle {
