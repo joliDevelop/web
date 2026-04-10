@@ -1,4 +1,5 @@
 import { Banner } from '../../components/shared/Banner/Banner'
+import { useNavigate } from 'react-router-dom'
 import { useRef } from 'react'
 import styles from './Nosotros.module.css'
 import bannerHome from '../../assets/images/banner1.webp'
@@ -13,7 +14,7 @@ import imageP from '../../assets/images/LINDA2.png'
 import Fondo from '../../assets/images/LINDA1.jpg'
 import { BrandsStrip } from '../../components/shared/BrandsStrip/BrandsStrip'
 import mapfre from '../../assets/logo/mapfre.png'
-import infonavit from '../../assets/logo/infonavit.png'
+import infonavit from '../../assets/logo/infonavit1.png'
 import bupa from '../../assets/logo/bupa.png'
 import qualitas from '../../assets/logo/qualitas.png'
 import skandia from '../../assets/logo/skandia.png'
@@ -113,6 +114,7 @@ export function Nosotros() {
             })
         }
     }
+    const navigate = useNavigate()
 
     return (
         <section className={styles.nosotros}>
@@ -125,6 +127,10 @@ export function Nosotros() {
                 }
                 subtitle="Especialistas en estrategias de incremento de pensión, retiro, inversión y seguros."
                 buttonText="¡contactanos!"
+                onButtonClick={() => {
+                    window.scrollTo(0, 0)
+                    navigate('/contacto')
+                }}
                 secondaryButtonText="Alianzas"
                 onSecondaryButtonClick={handleScrollToAliados}
 
