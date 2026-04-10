@@ -1,4 +1,5 @@
 import { Banner } from '../../components/shared/Banner/Banner'
+import { useNavigate } from 'react-router-dom'
 import { useRef } from 'react'
 import styles from './Nosotros.module.css'
 import bannerHome from '../../assets/images/banner1.webp'
@@ -113,6 +114,7 @@ export function Nosotros() {
             })
         }
     }
+    const navigate = useNavigate()
 
     return (
         <section className={styles.nosotros}>
@@ -125,6 +127,10 @@ export function Nosotros() {
                 }
                 subtitle="Especialistas en estrategias de incremento de pensión, retiro, inversión y seguros."
                 buttonText="¡contactanos!"
+                onButtonClick={() => {
+                    window.scrollTo(0, 0)
+                    navigate('/contacto')
+                }}
                 secondaryButtonText="Alianzas"
                 onSecondaryButtonClick={handleScrollToAliados}
 
