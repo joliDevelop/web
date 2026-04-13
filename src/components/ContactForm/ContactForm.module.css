@@ -6,6 +6,7 @@
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem 1.25rem;
     align-items: start;
+    box-sizing: border-box;
 }
 
 .formError {
@@ -43,11 +44,11 @@
     }
 
     .buttonWrapper {
-        justify-content: stretch;
+        justify-content: center;
     }
 
     .buttonWrapper button {
-        width: 100%;
+        width: min(100%, 280px);
         min-width: unset;
     }
 }
