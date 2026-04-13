@@ -1,0 +1,65 @@
+.seguros {
+    padding: 0;
+}
+
+.highlight {
+    color: white;
+}
+
+.highlight2 {
+    color: var(--color-secondary);
+}
+
+.container {
+    padding: 30px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.containerTittle {
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.containerMarca {
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.hero {
+    width: 100%;
+    max-width: 1400px;
+}
+
+.cardGrid {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+}
+
+.insuranceSection {
+    width: 100%;
+    padding: 80px 0;
+}
+
+.insuranceContainer {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.insuranceGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+    align-items: stretch;
+}
+
+@media (max-width: 900px) {
+    .insuranceGrid {
+        grid-template-columns: 1fr;
+    }
+}

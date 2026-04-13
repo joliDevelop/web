@@ -1,0 +1,63 @@
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    width: 100%;
+}
+
+.label {
+    font-size: 0.95rem;
+    font-weight: 800;
+    font-style: italic;
+    text-transform: uppercase;
+    color: var(--color-secondary);
+    line-height: 1.1;
+}
+
+.control {
+    width: 100%;
+    border: 2px solid rgba(26, 26, 26, 0.35);
+    border-radius: 12px;
+    background: transparent;
+    padding: 0.95rem 1rem;
+    font-size: 1rem;
+    font-family: var(--font-main);
+    font-style: italic;
+    color: var(--color-text);
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.control::placeholder {
+    color: rgba(26, 26, 26, 0.18);
+    font-style: italic;
+}
+
+.control:focus {
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 0 3px rgba(0, 48, 96, 0.08);
+}
+
+.textarea {
+    min-height: 158px;
+    resize: none;
+}
+
+.controlError {
+    border-color: #d93025;
+    box-shadow: 0 0 0 3px rgba(217, 48, 37, 0.12);
+}
+
+.error {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #d93025;
+    line-height: 1.2;
+    margin-top: -0.15rem;
+}
+
+.required {
+    color: #d93025;
+    font-weight: 700;
+    margin-left: 4px;
+}

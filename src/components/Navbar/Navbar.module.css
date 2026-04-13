@@ -1,11 +1,12 @@
 .navbar {
-    position: sticky;
-    top: 16px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     z-index: 100;
-    width: 100%;
-    padding: 0 16px;
+    padding: 16px;
     background: transparent;
-    border: 0;
+    transition: all 0.3s ease;
 }
 
 .container {
@@ -15,13 +16,21 @@
     align-items: center;
     justify-content: space-between;
     height: 56px;
-    padding: 30px 10px 30px 10px;
+    padding: 30px 10px;
     background: rgba(255, 255, 255, 0.712);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-radius: 18px;
     border: 1px solid rgba(15, 23, 42, 0.06);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+    transition: all 0.3s ease;
+}
+
+.scrolled .container {
+    background: color-mix(in srgb, var(--color-primary) 75%, transparent);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .logo img {
@@ -42,12 +51,21 @@
     text-transform: uppercase;
     color: #0f172a;
     opacity: 0.9;
-    transition: opacity 0.2s ease, transform 0.15s ease;
+    transition: opacity 0.2s ease, transform 0.15s ease, color 0.3s ease;
+}
+
+.scrolled .links a {
+    color: white;
 }
 
 .links a:hover {
     opacity: 1;
     transform: translateY(-1px);
+}
+
+.actions {
+    display: flex;
+    align-items: center;
 }
 
 @media (max-width: 820px) {
@@ -56,7 +74,49 @@
     }
 }
 
-.actions {
-    display: flex;
-    align-items: center;
+@media (max-width: 1024px) {
+    .links {
+        gap: 22px;
+    }
+
+    .logo img {
+        height: 34px;
+    }
+
+    .links a {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 640px) {
+    .links {
+        gap: 14px;
+    }
+
+    .links a {
+        font-size: 11px;
+        letter-spacing: 0.6px;
+    }
+
+    .logo img {
+        height: 30px;
+    }
+
+    .container {
+        padding: 20px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .links {
+        gap: 10px;
+    }
+
+    .links a {
+        font-size: 10px;
+    }
+
+    .logo img {
+        height: 26px;
+    }
 }

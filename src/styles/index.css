@@ -16,6 +16,8 @@
   --radius-md: 12px;
   --radius-lg: 18px;
   --shadow-soft: 0 8px 25px rgba(0, 48, 96, 0.08);
+  --icon-filter-primary: brightness(0) saturate(100%) invert(66%) sepia(69%) saturate(447%) hue-rotate(144deg) brightness(96%) contrast(96%);
+  --icon-filter-secondary: brightness(0) saturate(100%) invert(13%) sepia(93%) saturate(1524%) hue-rotate(189deg) brightness(93%) contrast(101%);
 }
 
 * {
@@ -111,4 +113,85 @@ a:hover {
   padding: 30px;
   box-shadow: var(--shadow-soft);
   border: 1px solid var(--color-border);
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .container {
+    width: 92%;
+  }
+
+  .section {
+    padding: 64px 0;
+  }
+
+  .card {
+    padding: 24px;
+  }
+
+  .btn {
+    padding: 11px 20px;
+  }
+}
+
+/* Móvil */
+@media (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+
+  body {
+    line-height: 1.5;
+  }
+
+  .container {
+    width: 94%;
+  }
+
+  .section {
+    padding: 56px 0;
+  }
+
+  .card {
+    padding: 20px;
+    border-radius: var(--radius-md);
+  }
+
+  .btn {
+    padding: 10px 18px;
+    font-size: 14px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    letter-spacing: -0.3px;
+  }
+}
+
+/* Móvil pequeño */
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+
+  .container {
+    width: 92%;
+  }
+
+  .section {
+    padding: 48px 0;
+  }
+
+  .card {
+    padding: 16px;
+    border-radius: var(--radius-sm);
+  }
+
+  .btn {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 14px;
+  }
 }

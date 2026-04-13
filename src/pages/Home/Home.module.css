@@ -1,33 +1,223 @@
 .home {
-    padding: 100px 0;
+    padding: 0;
 }
 
-.container {
-    width: 90%;
-    max-width: 1100px;
-    margin: 0 auto;
+.containerHome {
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
 }
 
 .hero {
-    max-width: 700px;
+    width: 100%;
+    max-width: 1400px;
 }
 
-.title {
-    font-size: 48px;
+.highlight {
+    color: white;
+}
+
+.highlight2 {
+    color: var(--color-secondary);
+}
+
+.cardGrid {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+}
+
+.mapsSection {
+    width: 100%;
+    padding: 50px 0;
+}
+
+.mapsContainer {
+    width: 100%;
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+.mapsTitle {
+    padding: 10px;
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1.1;
+    text-align: center;
+}
+
+.mapsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    margin-top: 28px;
+}
+
+.mapColumn {
+    display: flex;
+}
+
+.mapColumn iframe {
+    width: 100%;
+    height: 420px;
+    border: 0;
+    border-radius: 20px;
+    display: block;
+}
+
+.commentsColumn {
+    width: 100%;
+    height: 420px;
+    display: flex;
+    flex-direction: column;
+}
+
+.commentsTitle {
+    font-size: 36px;
     font-weight: 700;
     color: var(--color-secondary);
-    line-height: 1.1;
     margin-bottom: 20px;
 }
 
-.subtitle {
-    font-size: 18px;
-    font-weight: 400;
-    color: var(--color-text-light);
-    margin-bottom: 40px;
+.commentsText {
+    width: 100%;
+    overflow-y: auto;
+    flex: 1;
+    padding-right: 6px;
 }
 
-.cta {
-    display: flex;
-    gap: 16px;
+.commentsText::-webkit-scrollbar {
+    width: 6px;
+}
+
+.commentsText::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.commentsText::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+@media (max-width: 1024px) {
+    .mapsTitle {
+        font-size: 34px;
+    }
+
+    .mapsGrid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    .commentsColumn {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* 🔥 separación del banner */
+    .hero {
+        margin-top: 32px;
+        padding: 0 20px;
+        /* 🔥 aire lateral */
+    }
+
+    .mapsTitle {
+        font-size: 30px;
+        padding: 0;
+    }
+
+    .cardGrid {
+        gap: 18px;
+        margin-top: 40px;
+        /* 🔥 menos exagerado */
+    }
+
+    .mapsSection {
+        padding: 40px 0;
+    }
+
+    /* 🔥 mapa arriba, comentarios abajo */
+    .mapsGrid {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .mapColumn {
+        width: 100%;
+        order: 1;
+    }
+
+    .commentsColumn {
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+        order: 2;
+        height: auto;
+    }
+
+    .mapColumn iframe {
+        height: 360px;
+        border-radius: 16px;
+    }
+
+    .commentsTitle {
+        font-size: 30px;
+        margin-bottom: 16px;
+    }
+
+    .commentsText {
+        max-height: 420px;
+        padding-right: 4px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        margin-top: 24px;
+        padding: 0 16px;
+        /* 🔥 más compacto */
+        width: 100%;
+    }
+
+    .containerHome {
+        padding: 0;
+    }
+
+    .cardGrid {
+        grid-template-columns: 1fr;
+        margin-top: 32px;
+    }
+
+    /* 🔥 mapa sigue full width */
+    .mapsContainer {
+        width: 92%;
+    }
+
+    .mapsGrid {
+        gap: 24px;
+    }
+
+    .mapColumn iframe {
+        height: 300px;
+        border-radius: 14px;
+    }
+
+    .commentsTitle {
+        font-size: 26px;
+        margin-bottom: 14px;
+    }
+
+    .commentsText {
+        max-height: 360px;
+    }
+
+    .mapsTitle {
+        font-size: 26px;
+        line-height: 1.2;
+    }
 }

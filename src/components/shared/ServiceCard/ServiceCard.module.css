@@ -1,0 +1,223 @@
+.card {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: 15px;
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-soft);
+    transition: 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.cardHeader {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.cardTitle {
+    margin: 0;
+    min-width: 0;
+    line-height: 1.1;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.cardText {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--color-secondary);
+    white-space: normal;
+    word-break: break-word;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.cardList {
+    margin: 0;
+    padding-left: 20px;
+    color: var(--color-secondary);
+    white-space: normal;
+}
+
+.cardListItem {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 6px;
+}
+
+.cardListItem:last-child {
+    margin-bottom: 0;
+}
+
+.iconWrapper {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eef2f7;
+    flex: 0 0 56px;
+}
+
+.iconWrapper img {
+    width: 26px;
+    height: 26px;
+    transition: 0.25s ease;
+}
+
+.card:hover .iconWrapper {
+    background: var(--color-primary);
+}
+
+.row .cardHeader {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.column .cardHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}
+
+.column .cardTitle {
+    text-align: center;
+}
+
+.column .cardText {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.column .cardList {
+    align-self: center;
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .card {
+        padding: 18px;
+        gap: 14px;
+        border-radius: 20px;
+    }
+
+    .cardHeader {
+        gap: 12px;
+    }
+
+    .row .cardHeader {
+        align-items: center;
+        gap: 12px;
+    }
+
+    .column .cardHeader {
+        gap: 12px;
+    }
+
+    .iconWrapper {
+        width: 52px;
+        height: 52px;
+        flex: 0 0 52px;
+    }
+
+    .iconWrapper img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .cardTitle {
+        font-size: 18px;
+        line-height: 1.2;
+    }
+
+    .cardText,
+    .cardListItem {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .cardText {
+        text-align: left;
+        text-justify: auto;
+    }
+
+    .cardList {
+        padding-left: 18px;
+    }
+
+    .column .cardText {
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: 16px;
+        gap: 12px;
+        border-radius: 18px;
+    }
+
+    .row .cardHeader {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .row .cardTitle {
+        text-align: left;
+    }
+
+    .column .cardHeader {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .iconWrapper {
+        width: 48px;
+        height: 48px;
+        flex: 0 0 48px;
+    }
+
+    .iconWrapper img {
+        width: 22px;
+        height: 22px;
+    }
+
+    .cardTitle {
+        font-size: 16px;
+        line-height: 1.25;
+    }
+
+    .cardText,
+    .cardListItem {
+        font-size: 15px;
+        line-height: 1.65;
+    }
+
+    .cardList {
+        padding-left: 20px;
+    }
+
+    .column .cardText {
+        text-align: left;
+    }
+
+    .column .cardList {
+        align-self: stretch;
+    }
+}

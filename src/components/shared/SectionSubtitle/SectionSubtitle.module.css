@@ -1,0 +1,28 @@
+.subtitle {
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1.1;
+    text-align: center;
+}
+
+/* responsive */
+@media (max-width: 1024px) {
+    .subtitle {
+        font-size: 34px;
+    }
+}
+
+@media (max-width: 768px) {
+    .subtitle {
+        font-size: 30px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .subtitle {
+        font-size: 26px;
+        line-height: 1.2;
+    }
+}
