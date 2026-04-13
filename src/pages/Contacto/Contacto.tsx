@@ -19,12 +19,18 @@ export function Contacto() {
                 buttonText=""
             />
 
-            <SectionSubtitle>
-                <span className={styles.highlight2}>ENVIANOS TUS </span>DATOS<span className={styles.highlight2}> Y UN ASESOR SE PONDRA EN CONTACTO</span> CONTIGO.
-            </SectionSubtitle>
+            <div className={styles.content}>
+                <SectionSubtitle>
+                    <span className={styles.highlight2}>ENVIANOS TUS </span>
+                    DATOS
+                    <span className={styles.highlight2}> Y UN ASESOR SE PONDRA EN CONTACTO</span>
+                    CONTIGO.
+                </SectionSubtitle>
 
-            <ContactForm />
-
+                <div className={styles.formWrapper}>
+                    <ContactForm />
+                </div>
+            </div>
         </section>
     )
 }
