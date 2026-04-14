@@ -54,7 +54,8 @@ export function Home() {
                     </>
                 }
                 subtitle="Simula tu pensión en Modalidad 40 y conoce tu posible retiro."
-                buttonText="Simular mi pensión"
+                //Este botón se agregará cuando este la simulación de pensión lista
+                // buttonText="Simular mi pensión"
             />
 
             <div className={styles.containerHome}>

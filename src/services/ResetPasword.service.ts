@@ -21,7 +21,7 @@ export const restablecerContrasena = async (
 ) => {
   try {
     const response = await axios.post(
-      `${CONFIG.API_URL}/users/restablecer-contrasena`,
+      `${CONFIG.API_URL}/recover/restablecer-contrasena`,
       {
         token,
         password,

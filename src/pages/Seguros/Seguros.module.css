@@ -63,3 +63,39 @@
         grid-template-columns: 1fr;
     }
 }
+
+@media (max-width: 768px) {
+    .cardGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        margin-top: 20px;
+    }
+
+    .container {
+        padding: 20px 16px;
+        /* bajamos vertical y mantenemos lateral */
+    }
+
+    .containerTittle {
+        padding: 20px 0;
+        /* antes 40 → menos hueco */
+    }
+
+    .insuranceSection {
+        padding: 40px 0;
+        /* antes 80 → mucho más compacto */
+    }
+
+    .insuranceContainer {
+        width: 100%;
+        padding: 0 16px;
+    }
+
+    .hero {
+        padding: 0 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        /* controla espacios entre bloques */
+    }
+}

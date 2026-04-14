@@ -21,10 +21,8 @@ export function Contacto() {
 
             <div className={styles.content}>
                 <SectionSubtitle>
-                    <span className={styles.highlight2}>ENVIANOS TUS </span>
-                    DATOS
-                    <span className={styles.highlight2}> Y UN ASESOR SE PONDRA EN CONTACTO</span>
-                    CONTIGO.
+                    <span className={styles.highlight2}>ENVIANOS TUS </span>DATOS
+                    <span className={styles.highlight2}> Y UN ASESOR SE PONDRA EN CONTACTO </span>CONTIGO.
                 </SectionSubtitle>
 
                 <div className={styles.formWrapper}>
