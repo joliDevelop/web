@@ -1,6 +1,6 @@
 import styles from './Seguros.module.css'
 import { Banner } from '../../components/shared/Banner/Banner'
-import bannerSeguros from '../../assets/images/banner1.webp'
+import bannerSeguros from '../../assets/images/BANNERSEGUROS.png'
 import { SectionSubtitle } from '../../components/shared/SectionSubtitle/SectionSubtitle'
 import { ServiceCard, type ServiceCardProps } from '../../components/shared/ServiceCard/ServiceCard'
 import hospitalIcon from '../../assets/icons/hospital.png'
@@ -8,8 +8,12 @@ import viajeIcon from '../../assets/icons/viaje.png'
 import escudoIcon from '../../assets/icons/escudo.png'
 import autoIcon from '../../assets/icons/coche.png'
 import { AboutSection } from '../../components/shared/AboutSection/AboutSection'
-import imageP from '../../assets/images/LINDA2.png'
-import Fondo from '../../assets/images/LINDA1.jpg'
+import imagenMedico from '../../assets/images/SEGUROGMM-SINFONDO.png'
+import FondoMedico from '../../assets/images/SEGUROGMM.png'
+import imagenDaño from '../../assets/images/SEGURODAÑO-SINFONDO.png'
+import FondoDaño from '../../assets/images/SEGURODAÑO.png'
+import imagenAuto from '../../assets/images/SEGUROAUTO-SINFONDO.png'
+import FondoAuto from '../../assets/images/SEGUROAUTO.png'
 import { InfoCard } from '../../components/shared/InfoCard/InfoCard'
 
 const services: ServiceCardProps[] = [
@@ -47,8 +51,9 @@ export function Seguros() {
                 backgroundImage={bannerSeguros}
                 title={
                     <>
-                        PROTECCIÓN <span className={styles.highlight}>INTELIGENTE
-                            PARA LO QUE</span> MÁS VALORAS.
+                        PROTECCIÓN <span className={styles.highlight}>INTELIGENTE</span>
+                        <br />
+                        <span className={styles.highlight}>PARA LO QUE</span> MÁS VALORAS.
                     </>
                 }
                 subtitle="En Joli te ayudamos a elegir el seguro correcto según tu etapa de vida, tus necesidades y tus objetivos."
@@ -80,8 +85,8 @@ export function Seguros() {
                         </SectionSubtitle>
                     </section>
                     <AboutSection
-                        backgroundImage={Fondo}
-                        mainImage={imageP}
+                        backgroundImage={FondoMedico}
+                        mainImage={imagenMedico}
                         imageAlt="Asesoría financiera"
                         subtitle=""
                         description={[
@@ -140,8 +145,8 @@ export function Seguros() {
                         </SectionSubtitle>
                     </section>
                     <AboutSection
-                        backgroundImage={Fondo}
-                        mainImage={imageP}
+                        backgroundImage={FondoDaño}
+                        mainImage={imagenDaño}
                         imageAlt="Asesoría financiera"
                         subtitle=""
                         description={[
@@ -158,8 +163,8 @@ export function Seguros() {
                         </SectionSubtitle>
                     </section>
                     <AboutSection
-                        backgroundImage={Fondo}
-                        mainImage={imageP}
+                        backgroundImage={FondoAuto}
+                        mainImage={imagenAuto}
                         imageAlt="Asesoría financiera"
                         subtitle="Aseguradoras alidas"
                         description="Trabajamos con aseguradoras solidas como Bupa, Mapfre, Quálitas, Skandia, entre otras, para ofrecerte opciones confiables y adaptadas a tus necesidades."
