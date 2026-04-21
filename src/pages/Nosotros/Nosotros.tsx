@@ -77,7 +77,7 @@ const wins = [
     },
     {
         title: "MAPFRE MILLA",
-        description: "MEJORES ASESORES DE SEGURODE VIDA EN",
+        description: "MEJORES ASESORES DE SEGURO DE VIDA EN",
         highlight: "LATINOAMÉRICA.",
         image: logro2,
         imageAlt: "mapfre"
@@ -126,7 +126,7 @@ export function Nosotros() {
                     </>
                 }
                 subtitle="Especialistas en estrategias de incremento de pensión, retiro, inversión y seguros."
-                buttonText="¡contactanos!"
+                buttonText="¡Contáctanos!"
                 onButtonClick={() => {
                     window.scrollTo(0, 0)
                     navigate('/contacto')
