@@ -20,7 +20,7 @@ const services: ServiceCardProps[] = [
     {
         icon: hospitalIcon,
         alt: 'hospital',
-        title: 'GASTOS MEDICOS MAYORES',
+        title: 'GASTOS MÉDICOS MAYORES',
         layout: 'column'
     },
     {
@@ -117,7 +117,7 @@ export function Seguros() {
                                     description="Un seguro de vida brinda estabilidad financiera a tus seres queridos ante cualquier imprevisto,
                                     brindándote la tranquilidad de saber que su futuro está protegido."
                                     points={[
-                                        'Resplado en caso de fallecimiento o invaliez.'
+                                        'Respaldo en caso de fallecimiento o invalidez.'
                                     ]}
                                 />
 
@@ -126,7 +126,7 @@ export function Seguros() {
                                     alt="Seguro de viaje"
                                     title="Seguro de Viaje"
                                     subtitle="Viaja con tranquilidad desde el primer momento."
-                                    description="Cobertura médica, asistencia y respaldo ante emergencias, para que disfrutes cada destino con la seguiridad
+                                    description="Cobertura médica, asistencia y respaldo ante emergencias, para que disfrutes cada destino con la seguridad
                                     de estar protegido en todo momento."
                                     points={[
                                         'Viaja con respaldo médico y asistencia ante cualquier emergencia.',
@@ -167,7 +167,7 @@ export function Seguros() {
                         mainImage={imagenAuto}
                         imageAlt="Asesoría financiera"
                         subtitle="Aseguradoras alidas"
-                        description="Trabajamos con aseguradoras solidas como Bupa, Mapfre, Quálitas, Skandia, entre otras, para ofrecerte opciones confiables y adaptadas a tus necesidades."
+                        description="Trabajamos con aseguradoras sólidas como Bupa, Mapfre, Quálitas, Skandia, entre otras, para ofrecerte opciones confiables y adaptadas a tus necesidades."
                         reverse
                     />
 
