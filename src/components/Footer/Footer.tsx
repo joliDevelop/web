@@ -90,9 +90,9 @@ export function Footer() {
                     <div className={styles.infoItem}>
                         <img src={location} alt="" aria-hidden="true" />
                         <span>
-                            Blvd. Bernardo Quintana Arrioja 14 <br />
+                            Blvd. Bernardo Quintana Arrioja 17 A <br />
                             Alamos 2da Secc. <br />
-                            Santiago de Querétaro
+                            Santiago de Querétaro, Querétaro
                         </span>
                     </div>
                 </div>
