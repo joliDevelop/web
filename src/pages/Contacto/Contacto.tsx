@@ -11,7 +11,7 @@ export function Contacto() {
                 backgroundImage={bannerHome}
                 title={
                     <>
-                        <span className={styles.highlight}>¡</span>CONTACTANOS
+                        <span className={styles.highlight}>¡</span>CONTÁCTANOS
                         <span className={styles.highlight}>!</span>
                     </>
                 }
@@ -21,8 +21,8 @@ export function Contacto() {
 
             <div className={styles.content}>
                 <SectionSubtitle>
-                    <span className={styles.highlight2}>ENVIANOS TUS </span>DATOS
-                    <span className={styles.highlight2}> Y UN ASESOR SE PONDRA EN CONTACTO </span>CONTIGO.
+                    <span className={styles.highlight2}>ENVÍANOS TUS </span>DATOS
+                    <span className={styles.highlight2}> Y UN ASESOR SE PONDRÁ EN CONTACTO </span>CONTIGO.
                 </SectionSubtitle>
 
                 <div className={styles.formWrapper}>
