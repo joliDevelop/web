@@ -43,6 +43,13 @@ const socialLinks = [
     }
 ]
 
+const handleScrollTop = () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    })
+}
+
 export function Footer() {
     return (
         <footer className={styles.footer}>
@@ -98,7 +105,7 @@ export function Footer() {
                 </div>
 
                 <div className={styles.contact}>
-                    <Link to="/contacto" className={styles.button}>
+                    <Link to="/contacto" className={styles.button} onClick={handleScrollTop}>
                         CONTÁCTANOS
                     </Link>
                 </div>

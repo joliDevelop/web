@@ -22,6 +22,7 @@ export function Navbar() {
       behavior: 'smooth'
     })
   }
+  
   return (
     <header className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
       <div className={styles.container}>
