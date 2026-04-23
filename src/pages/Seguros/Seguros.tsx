@@ -1,6 +1,6 @@
 import styles from './Seguros.module.css'
 import { Banner } from '../../components/shared/Banner/Banner'
-import bannerSeguros from '../../assets/images/banner1.webp'
+import bannerSeguros from '../../assets/images/BANNERSEGUROS.png'
 import { SectionSubtitle } from '../../components/shared/SectionSubtitle/SectionSubtitle'
 import { ServiceCard, type ServiceCardProps } from '../../components/shared/ServiceCard/ServiceCard'
 import hospitalIcon from '../../assets/icons/hospital.png'
@@ -8,15 +8,19 @@ import viajeIcon from '../../assets/icons/viaje.png'
 import escudoIcon from '../../assets/icons/escudo.png'
 import autoIcon from '../../assets/icons/coche.png'
 import { AboutSection } from '../../components/shared/AboutSection/AboutSection'
-import imageP from '../../assets/images/LINDA2.png'
-import Fondo from '../../assets/images/LINDA1.jpg'
+import imagenMedico from '../../assets/images/GMM-SINFONDO.png'
+import FondoMedico from '../../assets/images/GMM.png'
+import imagenDaño from '../../assets/images/DAÑOS-SINFONDO.png'
+import FondoDaño from '../../assets/images/DAÑOS.png'
+import imagenAuto from '../../assets/images/AUTO-SINFONDO.png'
+import FondoAuto from '../../assets/images/AUTO.png'
 import { InfoCard } from '../../components/shared/InfoCard/InfoCard'
 
 const services: ServiceCardProps[] = [
     {
         icon: hospitalIcon,
         alt: 'hospital',
-        title: 'GASTOS MEDICOS MAYORES',
+        title: 'GASTOS MÉDICOS MAYORES',
         layout: 'column'
     },
     {
@@ -47,8 +51,9 @@ export function Seguros() {
                 backgroundImage={bannerSeguros}
                 title={
                     <>
-                        PROTECCIÓN <span className={styles.highlight}>INTELIGENTE
-                            PARA LO QUE</span> MÁS VALORAS.
+                        PROTECCIÓN <span className={styles.highlight}>INTELIGENTE</span>
+                        <br />
+                        <span className={styles.highlight}>PARA LO QUE</span> MÁS VALORAS.
                     </>
                 }
                 subtitle="En Joli te ayudamos a elegir el seguro correcto según tu etapa de vida, tus necesidades y tus objetivos."
@@ -80,8 +85,8 @@ export function Seguros() {
                         </SectionSubtitle>
                     </section>
                     <AboutSection
-                        backgroundImage={Fondo}
-                        mainImage={imageP}
+                        backgroundImage={FondoMedico}
+                        mainImage={imagenMedico}
                         imageAlt="Asesoría financiera"
                         subtitle=""
                         description={[
@@ -112,7 +117,7 @@ export function Seguros() {
                                     description="Un seguro de vida brinda estabilidad financiera a tus seres queridos ante cualquier imprevisto,
                                     brindándote la tranquilidad de saber que su futuro está protegido."
                                     points={[
-                                        'Resplado en caso de fallecimiento o invaliez.'
+                                        'Respaldo en caso de fallecimiento o invalidez.'
                                     ]}
                                 />
 
@@ -121,7 +126,7 @@ export function Seguros() {
                                     alt="Seguro de viaje"
                                     title="Seguro de Viaje"
                                     subtitle="Viaja con tranquilidad desde el primer momento."
-                                    description="Cobertura médica, asistencia y respaldo ante emergencias, para que disfrutes cada destino con la seguiridad
+                                    description="Cobertura médica, asistencia y respaldo ante emergencias, para que disfrutes cada destino con la seguridad
                                     de estar protegido en todo momento."
                                     points={[
                                         'Viaja con respaldo médico y asistencia ante cualquier emergencia.',
@@ -140,8 +145,8 @@ export function Seguros() {
                         </SectionSubtitle>
                     </section>
                     <AboutSection
-                        backgroundImage={Fondo}
-                        mainImage={imageP}
+                        backgroundImage={FondoDaño}
+                        mainImage={imagenDaño}
                         imageAlt="Asesoría financiera"
                         subtitle=""
                         description={[
@@ -158,11 +163,11 @@ export function Seguros() {
                         </SectionSubtitle>
                     </section>
                     <AboutSection
-                        backgroundImage={Fondo}
-                        mainImage={imageP}
+                        backgroundImage={FondoAuto}
+                        mainImage={imagenAuto}
                         imageAlt="Asesoría financiera"
                         subtitle="Aseguradoras alidas"
-                        description="Trabajamos con aseguradoras solidas como Bupa, Mapfre, Quálitas, Skandia, entre otras, para ofrecerte opciones confiables y adaptadas a tus necesidades."
+                        description="Trabajamos con aseguradoras sólidas como Bupa, Mapfre, Quálitas, Skandia, entre otras, para ofrecerte opciones confiables y adaptadas a tus necesidades."
                         reverse
                     />
 
