@@ -16,19 +16,25 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const handleScrollTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
+  }
   return (
     <header className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
       <div className={styles.container}>
         <div className={styles.logo}>
-          <NavLink to="/">
+          <NavLink to="/" onClick={handleScrollTop}>
             <img src={scrolled ? logoWhite : logo} alt="JOLI logo" />
           </NavLink>
         </div>
 
         <nav className={styles.links}>
-          <NavLink to="/nosotros">Nosotros</NavLink>
-          <NavLink to="/seguros">Seguros</NavLink>
-          <NavLink to="/contacto">Contacto</NavLink>
+          <NavLink to="/nosotros" onClick={handleScrollTop}>Nosotros</NavLink>
+          <NavLink to="/seguros" onClick={handleScrollTop}>Seguros</NavLink>
+          <NavLink to="/contacto" onClick={handleScrollTop}>Contacto</NavLink>
         </nav>
       </div>
     </header>
