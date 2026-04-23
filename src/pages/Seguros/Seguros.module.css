@@ -17,7 +17,7 @@
 }
 
 .containerTittle {
-    padding: 40px 0;
+    padding: 20px 0;
     display: flex;
     justify-content: center;
 }
@@ -40,28 +40,11 @@
     gap: 24px;
 }
 
-.insuranceSection {
-    width: 100%;
-    padding: 80px 0;
-}
-
-.insuranceContainer {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
 .insuranceGrid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
     gap: 28px;
-    align-items: stretch;
-}
-
-@media (max-width: 900px) {
-    .insuranceGrid {
-        grid-template-columns: 1fr;
-    }
+    width: 100%;
 }
 
 @media (max-width: 768px) {
@@ -73,22 +56,10 @@
 
     .container {
         padding: 20px 16px;
-        /* bajamos vertical y mantenemos lateral */
     }
 
     .containerTittle {
         padding: 20px 0;
-        /* antes 40 → menos hueco */
-    }
-
-    .insuranceSection {
-        padding: 40px 0;
-        /* antes 80 → mucho más compacto */
-    }
-
-    .insuranceContainer {
-        width: 100%;
-        padding: 0 16px;
     }
 
     .hero {
@@ -96,6 +67,9 @@
         display: flex;
         flex-direction: column;
         gap: 16px;
-        /* controla espacios entre bloques */
+    }
+
+    .insuranceGrid {
+        gap: 24px;
     }
 }

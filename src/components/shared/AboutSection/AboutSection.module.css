@@ -94,6 +94,10 @@
     max-height: 100%;
 }
 
+.infoColumnCustom {
+    align-items: stretch;
+}
+
 @media (max-width: 1024px) {
     .boxGrid {
         gap: 32px;
@@ -106,6 +110,12 @@
         flex-direction: column;
         gap: 24px;
         margin-top: 40px;
+    }
+
+    .infoColumnCustom {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
     }
 
     .boxColumn {

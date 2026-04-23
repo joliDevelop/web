@@ -14,7 +14,10 @@ import imagenDaño from '../../assets/images/DAÑOS-SINFONDO.png'
 import FondoDaño from '../../assets/images/DAÑOS.png'
 import imagenAuto from '../../assets/images/AUTO-SINFONDO.png'
 import FondoAuto from '../../assets/images/AUTO.png'
+import imagenViaje from '../../assets/images/VIAJE-SINFONDO.png'
+import fondoViaje from '../../assets/images/VIAJE.png'
 import { InfoCard } from '../../components/shared/InfoCard/InfoCard'
+import { InsuranceSplitSection } from './components/InsuranceSplitSection'
 
 const services: ServiceCardProps[] = [
     {
@@ -44,7 +47,6 @@ const services: ServiceCardProps[] = [
 ]
 
 export function Seguros() {
-
     return (
         <section className={styles.seguros}>
             <Banner
@@ -59,6 +61,7 @@ export function Seguros() {
                 subtitle="En Joli te ayudamos a elegir el seguro correcto según tu etapa de vida, tus necesidades y tus objetivos."
                 buttonText=""
             />
+
             <div className={styles.container}>
                 <div className={styles.hero}>
                     <section className={styles.containerTittle}>
@@ -79,23 +82,25 @@ export function Seguros() {
                             />
                         ))}
                     </div>
+
                     <section className={styles.containerTittle}>
                         <SectionSubtitle>
                             <span className={styles.highlight2}>GASTOS MÉDICOS </span>MAYORES
                         </SectionSubtitle>
                     </section>
+
                     <AboutSection
                         backgroundImage={FondoMedico}
                         mainImage={imagenMedico}
                         imageAlt="Asesoría financiera"
                         subtitle=""
                         description={[
-                            "Cobertura nacional e internacional.",
-                            "Cobertura desde los 0 hasta los 74 años.",
-                            "Hospitales de primer nivel.",
-                            "Más de 12,000 proveedores médicos.",
-                            "Consultas médicas y medicamentos a domicilio.",
-                            "Estudios de laboratorio, tratamientos y red de especialistas.",
+                            'Cobertura nacional e internacional.',
+                            'Cobertura desde los 0 hasta los 74 años.',
+                            'Hospitales de primer nivel.',
+                            'Más de 12,000 proveedores médicos.',
+                            'Consultas médicas y medicamentos a domicilio.',
+                            'Estudios de laboratorio, tratamientos y red de especialistas.'
                         ]}
                         reverse
                     />
@@ -106,54 +111,54 @@ export function Seguros() {
                         </SectionSubtitle>
                     </section>
 
-                    <section className={styles.insuranceSection}>
-                        <div className={styles.insuranceContainer}>
-                            <div className={styles.insuranceGrid}>
-                                <InfoCard
-                                    icon={viajeIcon}
-                                    alt="Seguro de vida"
-                                    title="Seguro de Vida y Temporal"
-                                    subtitle="La vida es incierta, pero la seguridad de tu familia no debería serlo."
-                                    description="Un seguro de vida brinda estabilidad financiera a tus seres queridos ante cualquier imprevisto,
-                                    brindándote la tranquilidad de saber que su futuro está protegido."
-                                    points={[
-                                        'Respaldo en caso de fallecimiento o invalidez.'
-                                    ]}
-                                />
-
-                                <InfoCard
-                                    icon={viajeIcon}
-                                    alt="Seguro de viaje"
-                                    title="Seguro de Viaje"
-                                    subtitle="Viaja con tranquilidad desde el primer momento."
-                                    description="Cobertura médica, asistencia y respaldo ante emergencias, para que disfrutes cada destino con la seguridad
-                                    de estar protegido en todo momento."
-                                    points={[
-                                        'Viaja con respaldo médico y asistencia ante cualquier emergencia.',
-                                        'Atención médica en el extranjero.',
-                                        'Asistencia y protección durante tu viaje.',
-                                        'Cobertura desde la salida hasta el regreso.'
-                                    ]}
-                                />
-                            </div>
-                        </div>
-                    </section>
-
+                    <InsuranceSplitSection
+                        backgroundImage={fondoViaje}
+                        mainImage={imagenViaje}
+                        imageAlt="Seguro de viaje y vida temporal"
+                        firstContent={
+                            <InfoCard
+                                icon={viajeIcon}
+                                alt="Seguro de vida"
+                                title="Seguro de Vida y Temporal"
+                                subtitle="La vida es incierta, pero la seguridad de tu familia no debería serlo."
+                                description="Un seguro de vida brinda estabilidad financiera a tus seres queridos ante cualquier imprevisto, brindándote la tranquilidad de saber que su futuro está protegido."
+                                points={[
+                                    'Respaldo en caso de fallecimiento o invalidez.'
+                                ]}
+                            />
+                        }
+                        secondContent={
+                            <InfoCard
+                                icon={viajeIcon}
+                                alt="Seguro de viaje"
+                                title="Seguro de Viaje"
+                                subtitle="Viaja con tranquilidad desde el primer momento."
+                                description="Cobertura médica, asistencia y respaldo ante emergencias, para que disfrutes cada destino con la seguridad de estar protegido en todo momento."
+                                points={[
+                                    'Viaja con respaldo médico y asistencia ante cualquier emergencia.',
+                                    'Atención médica en el extranjero.',
+                                    'Asistencia y protección durante tu viaje.',
+                                    'Cobertura desde la salida hasta el regreso.'
+                                ]}
+                            />
+                        }
+                    />
                     <section className={styles.containerTittle}>
                         <SectionSubtitle>
                             <span className={styles.highlight2}>SEGURO DE </span>DAÑOS
                         </SectionSubtitle>
                     </section>
+
                     <AboutSection
                         backgroundImage={FondoDaño}
                         mainImage={imagenDaño}
                         imageAlt="Asesoría financiera"
                         subtitle=""
                         description={[
-                            "Protección para tu patrimonio, hogar o negocio.",
-                            "Cobertura ante imprevistos.",
-                            "Protección de bienes, inmuebles y activos.",
-                            "Respaldo financiero ante siniestros.",
+                            'Protección para tu patrimonio, hogar o negocio.',
+                            'Cobertura ante imprevistos.',
+                            'Protección de bienes, inmuebles y activos.',
+                            'Respaldo financiero ante siniestros.'
                         ]}
                     />
 
@@ -162,15 +167,15 @@ export function Seguros() {
                             <span className={styles.highlight2}>SEGURO DE </span>AUTO <span className={styles.highlight2}>Y FLOTILLAS</span>
                         </SectionSubtitle>
                     </section>
+
                     <AboutSection
                         backgroundImage={FondoAuto}
                         mainImage={imagenAuto}
                         imageAlt="Asesoría financiera"
-                        subtitle="Aseguradoras alidas"
+                        subtitle="Aseguradoras aliadas"
                         description="Trabajamos con aseguradoras sólidas como Bupa, Mapfre, Quálitas, Skandia, entre otras, para ofrecerte opciones confiables y adaptadas a tus necesidades."
                         reverse
                     />
-
                 </div>
             </div>
         </section>
