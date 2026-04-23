@@ -36,7 +36,7 @@ const services = [
     {
         icon: creditoIcon,
         alt: 'Crédito a pensionados',
-        title: 'CREDITO A PENSIONADOS',
+        title: 'CRÉDITO A PENSIONADOS',
         description: 'Accede a créditos diseñados especialmente para pensionados.'
     }
 ]
