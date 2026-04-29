@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react'
+import { useToast } from '../../context/ToastContext'
 import { FormField } from '../shared/FormField/FormField'
 import { Button } from '../shared/Button/Button'
 import {
@@ -35,6 +36,8 @@ export function ContactForm() {
 
     const [errors, setErrors] = useState<ContactFormErrors>({})
     const [isSubmitting, setIsSubmitting] = useState(false)
+
+    const { showToast } = useToast()
 
     const handleChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -168,6 +171,12 @@ export function ContactForm() {
                 })
             }
 
+            showToast({
+                type: 'success',
+                title: 'Formulario enviado correctamente',
+                message: 'Un asesor se pondrá en contacto contigo.'
+            })
+
             setFormData({
                 nombre_completo: '',
                 telefono: '',
@@ -179,6 +188,12 @@ export function ContactForm() {
             setErrors({})
         } catch (error) {
             console.error('Error al enviar el formulario:', error)
+
+            showToast({
+                type: 'error',
+                title: 'No se pudo enviar el formulario',
+                message: 'Inténtalo nuevamente en unos minutos.'
+            })
         } finally {
             setIsSubmitting(false)
         }
@@ -206,7 +221,6 @@ export function ContactForm() {
                     onChange={handleChange}
                     error={errors.email}
                     required
-
                 />
 
                 <FormField
